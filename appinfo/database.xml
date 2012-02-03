@@ -9,37 +9,37 @@
 	
 	<table>
 		
-		<name>*dbprefix*emailconnection</name>
+		<name>*dbprefix*email_connection</name>
 		
 		<declaration>
 			
 			<field>
 				<name>uid</name>
-				<type>text</type>
-				<default></default>
+				<type>varchar</type>
+				<default> </default>
 				<notnull>true</notnull>
-				<length>200</length>
+				<length>64</length>
 			</field>
 			
 			<field>
 				<name>mailhost</name>
-				<type>text</type>
+				<type>varchar</type>
 				<default>localhost</default>
 				<notnull>true</notnull>
-				<length>200</length>
+				<length>255</length>
 			</field>
 			<field>
 				<name>mailuser</name>
-				<type>text</type>
-				<default>username</default>
+				<type>varchar</type>
+				<default> </default>
 				<notnull>true</notnull>
-				<length>200</length></field>
+				<length>255</length></field>
 			<field>
 				<name>mailpwd</name>
-				<type>text</type>
-				<default>passwd</default>
+				<type>varchar</type>
+				<default> </default>
 				<notnull>true</notnull>
-				<length>200</length></field>
+				<length>255</length></field>
 
 		</declaration>
 
