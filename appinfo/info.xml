@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<info>
+	<id>email</id>
+	<name>Email</name>
+	<description>Use an IMAP mail account in ownCloud</description>
+	<version>0.1</version>
+	<licence>AGPL</licence>
+	<author>Volker Kuhle</author>
+	<require>2</require>
+</info>

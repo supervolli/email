@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<database>
+	
+	<name>*dbname*</name>
+	<create>true</create>
+	<overwrite>false</overwrite>
+	
+	<charset>latin1</charset>
+	
+	<table>
+		
+		<name>*dbprefix*emailconnection</name>
+		
+		<declaration>
+			
+			<field>
+				<name>uid</name>
+				<type>text</type>
+				<default></default>
+				<notnull>true</notnull>
+				<length>200</length>
+			</field>
+			
+			<field>
+				<name>mailhost</name>
+				<type>text</type>
+				<default>localhost</default>
+				<notnull>true</notnull>
+				<length>200</length>
+			</field>
+			<field>
+				<name>mailuser</name>
+				<type>text</type>
+				<default>username</default>
+				<notnull>true</notnull>
+				<length>200</length></field>
+			<field>
+				<name>mailpwd</name>
+				<type>text</type>
+				<default>passwd</default>
+				<notnull>true</notnull>
+				<length>200</length></field>
+
+		</declaration>
+
+ </table>
+</database>
