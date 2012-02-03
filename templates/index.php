@@ -20,19 +20,27 @@ if ($mbox) {
   #Postfaecher abholen
   $folders=imap_getmailboxes($mbox,$mh,"*");
   #Anzahl der Emails gesamt
-  $gesamt=imap_num_msg($mbox);
+  $mgesamt=imap_num_msg($mbox);
+
+  # Sortieren...
   sort($folders);
 
   if ($folders == false) {
       echo "Abruf fehlgeschlagen";
   } else {
-      echo "<ul id=\"contacts\"><li><b>Postf&auml;cher</b> (".$gesamt." Emails)</li>";
+      echo "<ul id=\"contacts\"><li><b>Postf&auml;cher</b> (".$mgesamt." Emails)</li>";
       foreach ($folders as $key=>$val) {
           # Postfachnamen bearbeiten
           $fname=str_replace($mh,'',imap_utf7_decode($val->name));
-          $fname = ($fname=='INBOX') ? 'Posteingang' : $fname;
+          $fname = ($fname=='INBOX') ? 'Posteingang'.$neu : $fname;
           $fname=str_replace('INBOX.','', $fname );
-          echo "<li>".$fname."</li>";
+          
+          # Postfachstatus
+          $fstatus=imap_status($mbox, $val->name, SA_ALL);
+          echo imap_last_error();
+          $funseen=($fstatus->unseen <> '0') ? " (<b>".$fstatus->unseen."</b>)" : '' ;
+	  # Postfach anzeigen
+          echo "<li>".$fname.$funseen."</li>";
   
       }
       echo "</ul>";
