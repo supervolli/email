@@ -6,6 +6,7 @@ $mh = "{".$_['mailhost'].":993/imap/ssl/novalidate-cert}";
 $mu = $_['mailuser'];
 $mp = $_['mailpwd'];
 $factive = $_['factive']; #Aktives Postfach
+$hstart = $_['hstart']; #Bei welchem Header beginnen
 
 #Mailbox oefnen
 $mbox = imap_open($mh."INBOX", $mu, $mp);
@@ -61,23 +62,52 @@ if ($mbox) {
 </div>
 
 <div id="rightcontent" class="rightcontent">
-
-	<b>Kopfzeilen</b> sieht man dann hier
 <?php 
-	$anz=$message_count = imap_num_msg($mbox);
-	#$sort_mbox=imap_sort($mbox, "SORTDATE", 0);
-	for ($i=0;$i<30;$i++){
-		$header = imap_headerinfo(mbox, $i);
-		echo $header->date;
-		echo $header->fromaddress;
-		echo $header->subject;
-		echo "<br />";
-	}
-	
+  $folder = $folders[$factive]->name;
+  #echo $folder;
+
+  #2. Verbindung nur fuer den aktiven Ordner
+  $mbox2 = imap_open($folder,$mu,$mp);
+
+  $anz = imap_num_msg($mbox2);
+  #Mailbox2 nach Datum sortieren (aus dem PHP-Manual gemoppst)
+#  $original_order = $mbox2;
+#  $sorted_mbox2 = imap_sort($mbox2, "SORTDATE", 0); 
+#  $totalrows = imap_num_msg($mbox2); 
+#  $startvalue = 0; 
+#  while ($startvalue < $totalrows) { 
+#    $header = imap_header($mbox2, $sorted_mbox2[$startvalue]); 
+#    $mid_1 = $header->message_id; 
+#    $i = 0; 
+#    while ($i < ($totalrows + 1)) { 
+#      $header1 = imap_header($original_order, $i); 
+#      $mid_2 = $header1->message_id; 
+#      if ($mid_1 == $mid_2) { 
+#        $id = $i; 
+#     } 
+#      $i ++; 
+#    }
+#    $startvalue++; 
+#  } 
+
+  #Headers $hstart + 25
+  for ($i=$anz; $i> ($anz-25); $i--){
+    $header = imap_headerinfo($mbox2,$i);
+    if ($header){
+      $subj = $header->subject;
+      $date  = $header->Date;
+      echo $date." - ".$subj."<br />";
+    }
+  }
+
+  imap_close($mbox2);
 ?>
 </div>
+
+
+
 <?php 
-if ($mbox){	
-	imap_close($mbox); 
-}
+  if ($mbox){	
+    imap_close($mbox); 
+  }
 ?>
