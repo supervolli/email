@@ -20,11 +20,14 @@ if($version!=0){
 	$bar=0;
 }
 
+# Aktive Postfach, wenn nicht gesetzt, dann 0 (das erste)
+$factive = isset($_GET['factive']) ? $_GET['factive'] : 0;
 
 $tmpl = new OC_TEMPLATE( "email", "index", "user" );
 $tmpl->assign( "uid",  $uid);
 $tmpl->assign( "mailuser",  $mailuser);
 $tmpl->assign( "mailhost",  $mailhost);
 $tmpl->assign( "mailpwd",  $mailpwd);
+$tmpl->assign( "factive",  $factive);
 $tmpl->printPage();
 ?>

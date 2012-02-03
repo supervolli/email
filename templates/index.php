@@ -1,8 +1,12 @@
 <?php 
+#Variablen abholen
+
 $uid = $_['uid'];
 $mh = "{".$_['mailhost'].":993/imap/ssl/novalidate-cert}";
 $mu = $_['mailuser'];
 $mp = $_['mailpwd'];
+$factive = $_['factive']; #Aktives Postfach
+
 #Mailbox oefnen
 $mbox = imap_open($mh."INBOX", $mu, $mp);
 echo imap_last_error();
@@ -22,13 +26,15 @@ if ($mbox) {
   #Anzahl der Emails gesamt
   $mgesamt=imap_num_msg($mbox);
 
-  # Sortieren...
+  # Sortieren... der Ordner
   sort($folders);
 
   if ($folders == false) {
       echo "Abruf fehlgeschlagen";
   } else {
-      echo "<ul id=\"contacts\"><li><b>Postf&auml;cher</b> (".$mgesamt." Emails)</li>";
+      echo "<ul id=\"folders\">";
+      #echo "<li>".$mgesamt." Emails</li>";
+
       foreach ($folders as $key=>$val) {
           # Postfachnamen bearbeiten
           $fname=str_replace($mh,'',imap_utf7_decode($val->name));
@@ -39,8 +45,12 @@ if ($mbox) {
           $fstatus=imap_status($mbox, $val->name, SA_ALL);
           echo imap_last_error();
           $funseen=($fstatus->unseen <> '0') ? " (<b>".$fstatus->unseen."</b>)" : '' ;
+
+          # Postfach aktiv?
+          $fclass =  ($factive == $key) ? ' class="active"' : '';
+
 	  # Postfach anzeigen
-          echo "<li>".$fname.$funseen."</li>";
+          echo "<li".$fclass."><a href=\"index.php?factive=".$key."\">".$fname.$funseen."</a></li>";
   
       }
       echo "</ul>";
