@@ -1,49 +1,49 @@
 <?php 
 $uid = $_['uid'];
-$mh = "{".$_['mailhost'].":143/novalidate-cert}";
+$mh = "{".$_['mailhost'].":993/imap/ssl/novalidate-cert}";
 $mu = $_['mailuser'];
 $mp = $_['mailpwd'];
-#Mailbox öffnen
+#Mailbox oefnen
 $mbox = imap_open($mh."INBOX", $mu, $mp);
 echo imap_last_error();
-
-if ($mbox){
-	#Ordner laden
-	$folders = imap_list($mbox, $mh, "*");
-	#Mailbox schließen   
-} else {
-	echo "Oeffnen des Postfaches fehlgeschlagen.";
-	echo imap_last_error();
-}
-
 ?>
 <div id="controls">
 <!--<b>Konfiguration</b><br />-->
 <input type="button" id="email_new" value="Neue Email" original-title></input>
 <input type="button" id="email_config" value="Konfigurieren" original-title></input>
-<?php
-#    echo "uid $uid<br />";
-#    echo "Host ".$_['mailhost']."<br />";
-#    echo "User $mu<br />";
-?>
 </div>
 
 <div id="leftcontent" class="leftcontent">
+
 <?php
-if ($folders == false) {
-    echo "Abruf fehlgeschlagen<br />\n";
-} else {
-    echo "<ul id=\"contacts\"><li><b>Ordner</b></li>";
-    foreach ($folders as $val) {
-        echo "<li>".$val."</li>";
-    }
-    echo "</ul>";
+if ($mbox) {
+  #Postfaecher abholen
+  $folders=imap_getmailboxes($mbox,$mh,"*");
+  #Anzahl der Emails gesamt
+  $gesamt=imap_num_msg($mbox);
+  sort($folders);
+
+  if ($folders == false) {
+      echo "Abruf fehlgeschlagen";
+  } else {
+      echo "<ul id=\"contacts\"><li><b>Postf&auml;cher</b> (".$gesamt." Emails)</li>";
+      foreach ($folders as $key=>$val) {
+          # Postfachnamen bearbeiten
+          $fname=str_replace($mh,'',imap_utf7_decode($val->name));
+          $fname = ($fname=='INBOX') ? 'Posteingang' : $fname;
+          $fname=str_replace('INBOX.','', $fname );
+          echo "<li>".$fname."</li>";
+  
+      }
+      echo "</ul>";
+  }
 }
 ?>
 
 </div>
 
 <div id="rightcontent" class="rightcontent">
+
 	<b>Kopfzeilen</b> sieht man dann hier
 <?php 
 	$anz=$message_count = imap_num_msg($mbox);
@@ -58,7 +58,6 @@ if ($folders == false) {
 	
 ?>
 </div>
-
 <?php 
 if ($mbox){	
 	imap_close($mbox); 
