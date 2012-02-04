@@ -70,35 +70,56 @@ if ($mbox) {
   $mbox2 = imap_open($folder,$mu,$mp);
 
   $anz = imap_num_msg($mbox2);
-  #Mailbox2 nach Datum sortieren (aus dem PHP-Manual gemoppst)
-#  $original_order = $mbox2;
-#  $sorted_mbox2 = imap_sort($mbox2, "SORTDATE", 0); 
-#  $totalrows = imap_num_msg($mbox2); 
-#  $startvalue = 0; 
-#  while ($startvalue < $totalrows) { 
-#    $header = imap_header($mbox2, $sorted_mbox2[$startvalue]); 
-#    $mid_1 = $header->message_id; 
-#    $i = 0; 
-#    while ($i < ($totalrows + 1)) { 
-#      $header1 = imap_header($original_order, $i); 
-#      $mid_2 = $header1->message_id; 
-#      if ($mid_1 == $mid_2) { 
-#        $id = $i; 
-#     } 
-#      $i ++; 
-#    }
-#    $startvalue++; 
-#  } 
+
+  echo '<table class="headers">';
+  echo '<thead>
+         <tr>
+           <th>Datum</th>
+           <th>Betreff</th>
+           <th>Von</th>
+         </tr>
+       </thead>
+       <tbody>';
+  # vorherige Mails
+  if ($hstart > 49) {
+    $von = ($hstart > 50)? ($hstart - 50) : 1;
+    $bis = $hstart -1;
+    echo '<tr>
+            <th colspan="3" class="hstart">
+              <a href="index.php?factive='.$factive.'&hstart='.($von - 1).'">Email '.$von.' bis '.$bis.'</a>
+          </th>
+         </tr>';
+  }  
 
   #Headers $hstart + 25
-  for ($i=$anz; $i> ($anz-25); $i--){
-    $header = imap_headerinfo($mbox2,$i);
+  for ($i=$hstart; $i < ($hstart + 50); $i++){
+    $header = imap_headerinfo($mbox2,($anz - $i), 20, 100); 
     if ($header){
-      $subj = $header->subject;
-      $date  = $header->Date;
-      echo $date." - ".$subj."<br />";
+      $subj = imap_utf8($header->subject);
+      $date = date("d.M.Y H:m",$header->udate);
+      $from = imap_utf8($header->fetchfrom);
+      $unseen = $header->Unseen;
+      echo "<tr>
+              <td class=\"date\">".$date."</td>
+              <td class=\"subj".$unseen."\">".$subj."</td>
+              <td class=\"from\">".$from."</td>
+           </tr>";
     }
   }
+  #Weitere Mails anzeigen
+  if (($hstart + 50) < $anz) {
+    $von = $hstart + 51; 
+    $bis = ($anz >= ($hstart + 100)) ? ($hstart + 100) : $anz;
+    echo '<tr>
+            <th colspan="3" class="hstart">
+             <a href="index.php?factive='.$factive.'&hstart='.($von - 1).'"> Email '.$von.' bis '.$bis.'</a>
+            </th>
+         </tr>';
+  }
+
+
+  echo '</tbody>
+        </table>';
 
   imap_close($mbox2);
 ?>

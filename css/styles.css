@@ -1,0 +1,39 @@
+table.headers {
+  position: relative;
+  left: -5px;
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+  white-space: nowrap;
+  margin: 0;
+}
+
+table.headers th {
+  color: #999;
+  border-bottom: 1px solid #DDD;
+  border-right: 1px solid #DDD;
+  height: 2em;
+  padding: 0.5em;
+  vertical-align: middle;
+}
+
+th.hstart {
+  text-align: center;
+}
+
+table.headers td {
+  border-right: 1px solid #DDD;
+  height: 1.5em;
+  padding: 0.5em;
+  vertical-align: middle;
+}
+
+td.subjU {
+  font-weight: bold;
+  white-space: normal;
+}
+
+td.subj {
+  white-space: normal;
+}
+
