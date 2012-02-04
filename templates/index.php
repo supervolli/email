@@ -129,7 +129,7 @@ echo '</div>
 
 
   #Die eine Email laden
-  echo "<div class=\"msg\" id=\"msg\" style=\"display:$display\">";
+  echo "<div class=\"msg\" id=\"msg\" style=\"display:$display;\">";
   if ($msg != 'nomail'){
     $header = imap_headerinfo($mbox2, $msg);
     $body = imap_body($mbox2, $msg);
