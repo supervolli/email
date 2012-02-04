@@ -9,7 +9,7 @@ $factive = $_['factive']; #Aktives Postfach
 $hstart = $_['hstart']; #Bei welchem Header beginnen
 $msg = $_['msg']; # Zu ladene Email
 
-$display = ($msg == 'nomail') ? 'none' : '';
+$display = ($msg == 'nomail') ? 'none' : 'block';
 
 #Mailbox oeffnen
 $mbox = imap_open($mh."INBOX", $mu, $mp);
