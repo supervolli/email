@@ -1,25 +1,36 @@
 <?php 
-#Variablen abholen
 
+#Variablen abholen
 $uid = $_['uid'];
 $mh = "{".$_['mailhost'].":993/imap/ssl/novalidate-cert}";
 $mu = $_['mailuser'];
 $mp = $_['mailpwd'];
 $factive = $_['factive']; #Aktives Postfach
 $hstart = $_['hstart']; #Bei welchem Header beginnen
+$msg = $_['msg']; # Zu ladene Email
 
-#Mailbox oefnen
+$display = ($msg == '') ? 'none' : '';
+
+#Mailbox oeffnen
 $mbox = imap_open($mh."INBOX", $mu, $mp);
 echo imap_last_error();
+
+#Nachricht oeffnen
+echo "<div class=\"msg\" id=\"msg\" style=\"display:$display\">";
+
+echo "Lade Nachricht Nr. ".$msg ;
+
 ?>
+<input type="button" id="close" value="Schlie&szlig;en" original-title onClick="document.getElementById('msg').style.display='none';"></input>
+</div>
+
+
 <div id="controls">
-<!--<b>Konfiguration</b><br />-->
 <input type="button" id="email_new" value="Neue Email" original-title></input>
 <input type="button" id="email_config" value="Konfigurieren" original-title></input>
 </div>
 
 <div id="leftcontent" class="leftcontent">
-
 <?php
 if ($mbox) {
   #Postfaecher abholen
@@ -74,9 +85,9 @@ if ($mbox) {
   echo '<table class="headers">';
   echo '<thead>
          <tr>
-           <th>Datum</th>
+           <th style="width: 100px;">Datum</th>
            <th>Betreff</th>
-           <th>Von</th>
+           <th style="width: 120px;">Von</th>
          </tr>
        </thead>
        <tbody>';
@@ -96,9 +107,14 @@ if ($mbox) {
     $header = imap_headerinfo($mbox2,($anz - $i), 20, 100); 
     if ($header){
       $subj = imap_utf8($header->subject);
-      $date = date("d.M.Y H:m",$header->udate);
+      $date = date("d. M Y H:m",$header->udate);
       $from = imap_utf8($header->fetchfrom);
+      $msgno = trim($header->Msgno);
       $unseen = $header->Unseen;
+
+      # Email Link zum oeffnen
+      $subj = '<a href="index.php?factive='.$factive.'&hstart='.$hstart.'&msg='.$msgno.'">'.$subj.'</a>';      
+
       echo "<tr>
               <td class=\"date\">".$date."</td>
               <td class=\"subj".$unseen."\">".$subj."</td>

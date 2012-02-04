@@ -26,6 +26,9 @@ $factive = isset($_GET['factive']) ? $_GET['factive'] : 0;
 # Welche Header sollen angezeigt werden (ab welcher Mail)
 $hstart  = isset($_GET['hstart']) ? $_GET['hstart'] : 0;
 
+# Anzuzeigende Email
+$msg  = isset($_GET['msg']) ? $_GET['msg'] : '';
+
 $tmpl = new OC_TEMPLATE( "email", "index", "user" );
 $tmpl->assign( "uid",  $uid);
 $tmpl->assign( "mailuser",  $mailuser);
@@ -33,5 +36,6 @@ $tmpl->assign( "mailhost",  $mailhost);
 $tmpl->assign( "mailpwd",  $mailpwd);
 $tmpl->assign( "factive",  $factive);
 $tmpl->assign( "hstart",  $hstart);
+$tmpl->assign( "msg",  $msg);
 $tmpl->printPage();
 ?>
