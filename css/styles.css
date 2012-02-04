@@ -1,14 +1,14 @@
 div.msg {
   position: absolute;
+  margin-left: -350pc;
   top: 100px;
   left: 50%;
   width: 700px;
   height: 600px;
-  margin-left: -350px;
   z-index: 1500;
   background-color: #FCFCFC;
   border: 1px solid #000;
- 
+  white-space: normal; 
 }
 
 

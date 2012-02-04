@@ -9,21 +9,12 @@ $factive = $_['factive']; #Aktives Postfach
 $hstart = $_['hstart']; #Bei welchem Header beginnen
 $msg = $_['msg']; # Zu ladene Email
 
-$display = ($msg == '') ? 'none' : '';
+$display = ($msg == 'nomail') ? 'none' : '';
 
 #Mailbox oeffnen
 $mbox = imap_open($mh."INBOX", $mu, $mp);
 echo imap_last_error();
-
-#Nachricht oeffnen
-echo "<div class=\"msg\" id=\"msg\" style=\"display:$display\">";
-
-echo "Lade Nachricht Nr. ".$msg ;
-
 ?>
-<input type="button" id="close" value="Schlie&szlig;en" original-title onClick="document.getElementById('msg').style.display='none';"></input>
-</div>
-
 
 <div id="controls">
 <input type="button" id="email_new" value="Neue Email" original-title></input>
@@ -68,12 +59,10 @@ if ($mbox) {
       echo "</ul>";
   }
 }
-?>
 
-</div>
-
-<div id="rightcontent" class="rightcontent">
-<?php 
+echo '</div> 
+      <div id="rightcontent" class="rightcontent">';
+ 
   $folder = $folders[$factive]->name;
   #echo $folder;
 
@@ -135,16 +124,32 @@ if ($mbox) {
 
 
   echo '</tbody>
-        </table>';
+      </table>
+</div>';
 
-  imap_close($mbox2);
+
+  #Die eine Email laden
+  echo "<div class=\"msg\" id=\"msg\" style=\"display:$display\">";
+  if ($msg != 'nomail'){
+    $header = imap_headerinfo($mbox2, $msg);
+    $body = imap_body($mbox2, $msg);
+
+    echo imap_qprint($body);
+  }
+
 ?>
-</div>
+
+  <input type="button" id="close" value="Schlie&szlig;en" original-title onClick="document.getElementById('msg').style.display='none';"></input>
+  </div>
+
 
 
 
 <?php 
   if ($mbox){	
     imap_close($mbox); 
+  }
+  if ($mbox2){
+    imap_close($mbox2);
   }
 ?>

@@ -27,7 +27,7 @@ $factive = isset($_GET['factive']) ? $_GET['factive'] : 0;
 $hstart  = isset($_GET['hstart']) ? $_GET['hstart'] : 0;
 
 # Anzuzeigende Email
-$msg  = isset($_GET['msg']) ? $_GET['msg'] : '';
+$msg  = isset($_GET['msg']) ? $_GET['msg'] : 'nomail';
 
 $tmpl = new OC_TEMPLATE( "email", "index", "user" );
 $tmpl->assign( "uid",  $uid);
