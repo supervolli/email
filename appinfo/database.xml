@@ -40,6 +40,16 @@
 				<default> </default>
 				<notnull>true</notnull>
 				<length>255</length></field>
+			<field>
+				<name>mailssl</name>
+				<type>boolean</type>
+				<default>true</default>
+				<notnull>true</notnull></field>
+			<field>
+				<name>mailport</name>
+				<type>int</type>
+				<default>993</default>
+				<length>5</length></field>
 
 		</declaration>
 
