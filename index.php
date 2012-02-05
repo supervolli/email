@@ -17,6 +17,8 @@ $data=$query->execute(array('bar'))->fetchAll();
 $mailuser=$data[0]['mailuser']; 
 $mailhost=$data[0]['mailhost'];
 $mailpwd=$data[0]['mailpwd'];
+$mailport=$data[0]['mailport'];
+$mailssl=$data[0]['mailssl'];
 
 # Welche Seite soll geladen werden?
 $templates = array("index","config");
