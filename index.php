@@ -3,6 +3,9 @@
 require_once('../../lib/base.php');
 require( 'template.php' );
 
+#Navigation anzeigen
+OC_App::setActiveNavigationEntry('email_index');
+
 # Style hinzufuegen
 OC_Util::addStyle('email','styles');
 
