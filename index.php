@@ -22,7 +22,7 @@ if($version!=0){
 
 # Welche Seite soll geladen werden?
 $templates = array('index','config');
-$tempalte = ( in_array($_get['t'],$templates) ) ? $_get['t'] : 'index';
+$tempalte = ( in_array($_GET['t'],$templates) ) ? $_GET['t'] : 'index';
 
 # Aktive Postfach, wenn nicht gesetzt, dann 0 (das erste)
 $factive = isset($_GET['factive']) ? $_GET['factive'] : 0;
