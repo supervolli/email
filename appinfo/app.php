@@ -6,7 +6,7 @@ OC_APP::addNavigationEntry( array( "id" => "email_index",
                                    "order" => 3, 
                                    "href" => OC_HELPER::linkTo( "email", "index.php" ), 
                                    "icon" => OC_HELPER::imagePath( "email", "icon.png" ), 
-                                   "name" => "Email" ));
+                                   "name" => $l->t('Mail') ));
 
 OC_APP::registerPersonal('email','config');
 
