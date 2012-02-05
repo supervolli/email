@@ -17,7 +17,7 @@ echo imap_last_error();
 ?>
 
 <div id="controls">
-<input type="button" id="email_new" value="Neue Email")"></input>
+<input type="button" id="email_new" value="Neue Email"></input>
 </div>
 
 <div id="leftcontent" class="leftcontent">
