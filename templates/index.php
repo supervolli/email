@@ -1,5 +1,7 @@
 <?php 
 
+require_once 'templates/functions.php';
+
 #Variablen abholen
 $uid = $_['uid'];
 $mh = "{".$_['mailhost'].":993/imap/ssl/novalidate-cert}";
@@ -129,19 +131,17 @@ echo '</div>
 
   #Die eine Email laden
   echo "<div class=\"msg\" id=\"msg\" style=\"display:$display;\">";
-  if ($msg != 'nomail'){
-    $header = imap_headerinfo($mbox2, $msg);
-    $body = imap_body($mbox2, $msg);
-
-    echo imap_qprint($body);
-  }
+  show_mail( $mbox2, $msg );
+ # if ($msg != 'nomail'){
+#    $header = imap_headerinfo($mbox2, $msg);
+#    $body = imap_body($mbox2, $msg);
+#    echo imap_qprint($body);
+#  }
 
 ?>
 
   <input type="button" id="close" value="Schlie&szlig;en" original-title onClick="document.getElementById('msg').style.display='none';"></input>
   </div>
-
-
 
 
 <?php 
