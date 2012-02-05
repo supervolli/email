@@ -20,6 +20,10 @@ if($version!=0){
 	$bar=0;
 }
 
+# Welche Seite soll geladen werden?
+$templates = array('index','config');
+$tempalte = isset(($_get['t']) & in_arrray($_get['t'],$templates) ) ? $_get['t'] : 'index';
+
 # Aktive Postfach, wenn nicht gesetzt, dann 0 (das erste)
 $factive = isset($_GET['factive']) ? $_GET['factive'] : 0;
 
@@ -28,6 +32,7 @@ $hstart  = isset($_GET['hstart']) ? $_GET['hstart'] : 0;
 
 # Anzuzeigende Email
 $msg  = isset($_GET['msg']) ? $_GET['msg'] : 'nomail';
+
 
 $tmpl = new OC_TEMPLATE( "email", "index", "user" );
 $tmpl->assign( "uid",  $uid);
