@@ -1,5 +1,4 @@
 <?php 
-
 #Variablen abholen
 $uid = $_['uid'];
 $mh = "{".$_['mailhost'].":993/imap/ssl/novalidate-cert}";
