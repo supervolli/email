@@ -6,21 +6,14 @@ require( 'template.php' );
 # Style hinzufuegen
 OC_Util::addStyle('email','styles');
 
-$version=OC_APPCONFIG::getValue('email','installed_version',0);
-
 #Daten laden
-if($version!=0){
-	
-	$uid = OC_User::getUser();
-	$query=OC_DB::prepare("SELECT * FROM *PREFIX*email_connection WHERE uid='".$uid."'");
-	$data=$query->execute(array('bar'))->fetchAll();
-	$mailuser=$data[0]['mailuser']; 
-	$mailhost=$data[0]['mailhost'];
-	$mailpwd=$data[0]['mailpwd'];
 
-}else{
-	$bar=0;
-}
+$uid = OC_User::getUser();
+$query=OC_DB::prepare("SELECT * FROM *PREFIX*email_connection WHERE uid='".$uid."'");
+$data=$query->execute(array('bar'))->fetchAll();
+$mailuser=$data[0]['mailuser']; 
+$mailhost=$data[0]['mailhost'];
+$mailpwd=$data[0]['mailpwd'];
 
 # Welche Seite soll geladen werden?
 $templates = array("index","config");
