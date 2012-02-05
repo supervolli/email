@@ -7,9 +7,9 @@ $mailuser=$data[0]['mailuser'];
 $mailhost=$data[0]['mailhost'];
 $mailpwd=$data[0]['mailpwd'];
 $mailport=$data[0]['mailport'];
-$mailssl = ($data[0]['mailssl']) ? 'checked' : '';
+$mailssl = ($data[0]['mailssl'] == '1') ? 'checked' : '';
 
-echo $mh;
+echo $mailssl;
 ?>
 <form id="emailform">
   <fieldset class="personalblock">
