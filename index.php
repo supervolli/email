@@ -17,7 +17,7 @@ if($version!=0){
 	$mailuser=$data[0]['mailuser']; 
 	$mailhost=$data[0]['mailhost'];
 	$mailpwd=$data[0]['mailpwd'];
-	$uid = OC_User::getUser();
+
 }else{
 	$bar=0;
 }
