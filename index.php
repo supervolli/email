@@ -2,8 +2,8 @@
 // Init owncloud
 require_once('../../lib/base.php');
 
-OC_Util::checkLoggedIn();
-OC_Util::checkAppEnabled('email'); 
+#OC_Util::checkLoggedIn();
+#OC_Util::checkAppEnabled('email'); 
 
 require( 'template.php' );
 
