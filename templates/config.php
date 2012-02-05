@@ -9,7 +9,6 @@ $mailpwd=$data[0]['mailpwd'];
 $mailport=$data[0]['mailport'];
 $mailssl = ($data[0]['mailssl'] == '1') ? 'checked' : '';
 
-echo $mailssl;
 ?>
 <form id="emailform">
   <fieldset class="personalblock">
@@ -26,7 +25,7 @@ echo $mailssl;
     <label for="mport">Port</label>
     <input type="text" name="mport" id="mport" value="<?php echo $mailport; ?>" placeholder="993" original-title="">
     <label for="mssl">SSL</label>
-    <input type="checkbox" name="mssl" id="mssl" "<?php echo $mssl; ?>" original-title="">
+    <input type="checkbox" name="mssl" id="mssl" "<?php echo $mailssl; ?>" original-title="">
   </fieldset>
 </form>
 
