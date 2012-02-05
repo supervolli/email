@@ -123,26 +123,9 @@ echo '</div>
 
   echo '</tbody>
       </table>
-</div>';
+  </div>';
 
-
- #Die eine Email laden
- #echo "<div class=\"msg\" id=\"msg\" style=\"display:$display;\">";
- #show_mail( $mbox2, $msg );
- # if ($msg != 'nomail'){
- #   $header = imap_headerinfo($mbox2, $msg);
- #   $body = imap_body($mbox2, $msg);
- #   echo imap_qprint($body);
- #   
- # }
-
-?>
-  <!-- <a target="popup" onclick="window.open('', 'popup', 'width=800,height=600,scrollbars=yes, toolbar=no,status=no, resizable=yes,menubar=no,location=no,directories=no')" href="msg.php">Nachricht</a>
-  <input type="button" id="close" value="Schlie&szlig;en" original-title onClick="document.getElementById('msg').style.display='none';"></input>
-  </div>-->
-
-
-<?php 
+  
   if ($mbox){	
     imap_close($mbox); 
   }
