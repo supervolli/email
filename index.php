@@ -7,7 +7,7 @@ OC_Util::checkAppEnabled('email');
 
 require( 'template.php' );
 
-include 'template/functions.php';
+#include 'template/functions.php';
 
 #Navigation anzeigen
 OC_App::setActiveNavigationEntry('email_index');
