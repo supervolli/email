@@ -28,4 +28,4 @@ $mailssl = ($data[0]['mailssl'] == '1') ? 'checked' : '';
     <input type="checkbox" name="mssl" id="mssl" <?php echo $mailssl; ?> original-title="">
   </fieldset>
 </form>
-
+ 
