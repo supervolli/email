@@ -100,7 +100,7 @@ echo '</div>
       $unseen = $header->Unseen;
 
       # Email Link zum oeffnen
-      $subj = '<a href="index.php?factive='.$factive.'&hstart='.$hstart.'&msg='.$msgno.'">'.$subj.'</a>';      
+      $subj = 'onclick="window.open(\'\', \'popup\', \'width=800,height=600,scrollbars=yes, toolbar=no,status=no, resizable=yes,menubar=no,location=no,directories=no\')" href="msg.php?msg='.$msgno.'">'.$subj.'</a>';      
 
       echo "<tr>
               <td class=\"date\">".$date."</td>
@@ -126,20 +126,20 @@ echo '</div>
 </div>';
 
 
-  #Die eine Email laden
-  echo "<div class=\"msg\" id=\"msg\" style=\"display:$display;\">";
+ #Die eine Email laden
+ #echo "<div class=\"msg\" id=\"msg\" style=\"display:$display;\">";
  #show_mail( $mbox2, $msg );
-  if ($msg != 'nomail'){
-    $header = imap_headerinfo($mbox2, $msg);
-    $body = imap_body($mbox2, $msg);
-    echo imap_qprint($body);
-    
-  }
+ # if ($msg != 'nomail'){
+ #   $header = imap_headerinfo($mbox2, $msg);
+ #   $body = imap_body($mbox2, $msg);
+ #   echo imap_qprint($body);
+ #   
+ # }
 
 ?>
-  <a target="popup" onclick="window.open('', 'popup', 'width=800,height=600,scrollbars=yes, toolbar=no,status=no, resizable=yes,menubar=no,location=no,directories=no')" href="msg.php">Nachricht</a>
+  <!-- <a target="popup" onclick="window.open('', 'popup', 'width=800,height=600,scrollbars=yes, toolbar=no,status=no, resizable=yes,menubar=no,location=no,directories=no')" href="msg.php">Nachricht</a>
   <input type="button" id="close" value="Schlie&szlig;en" original-title onClick="document.getElementById('msg').style.display='none';"></input>
-  </div>
+  </div>-->
 
 
 <?php 
