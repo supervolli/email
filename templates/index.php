@@ -17,7 +17,7 @@ echo imap_last_error();
 ?>
 
 <div id="controls">
-<input type="button" id="email_new" value="Neue Email" original-title></input>
+<input type="button" id="email_new" value="Neue Email" onClick="window.open('index.php?t=config')"></input>
 <input type="button" id="email_config" value="Konfigurieren" original-title></input>
 </div>
 
