@@ -7,6 +7,8 @@ require( 'template.php' );
 OC_Util::addStyle('email','styles');
 
 $version=OC_APPCONFIG::getValue('email','installed_version',0);
+
+#Daten laden
 if($version!=0){
 	
 	$uid = OC_User::getUser();
@@ -21,8 +23,13 @@ if($version!=0){
 }
 
 # Welche Seite soll geladen werden?
-$templates = array('index','config');
-$tempalte = ( in_array($_GET['t'],$templates) ) ? $_GET['t'] : 'index';
+$templates = array("index","config");
+$t=$_GET['t'];
+if ( in_array($t, $templates) ) {
+  $template = $_GET['t'];
+} else {
+  $template = "index";
+}
 
 # Aktive Postfach, wenn nicht gesetzt, dann 0 (das erste)
 $factive = isset($_GET['factive']) ? $_GET['factive'] : 0;
