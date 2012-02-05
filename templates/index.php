@@ -133,10 +133,11 @@ echo '</div>
     $header = imap_headerinfo($mbox2, $msg);
     $body = imap_body($mbox2, $msg);
     echo imap_qprint($body);
+    
   }
 
 ?>
-
+  <a href="#" onClick="window.open('templates/msg.php')">nachricht</a>
   <input type="button" id="close" value="Schlie&szlig;en" original-title onClick="document.getElementById('msg').style.display='none';"></input>
   </div>
 
