@@ -3,7 +3,7 @@
 	<id>email</id>
 	<name>Email</name>
 	<description>Use an IMAP mail account in ownCloud</description>
-	<version>0.1</version>
+	<version>0.1.1</version>
 	<licence>AGPL</licence>
 	<author>Volker Kuhle</author>
 	<require>2</require>
