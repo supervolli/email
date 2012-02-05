@@ -137,7 +137,7 @@ echo '</div>
   }
 
 ?>
-  <a href="#" onClick="window.open('msg.php')">nachricht</a>
+  <a target="popup" onclick="window.open('', 'popup', 'width=800,height=600,scrollbars=yes, toolbar=no,status=no, resizable=yes,menubar=no,location=no,directories=no,top=10,left=10')" href="msg.php">Nachricht</a>
   <input type="button" id="close" value="Schlie&szlig;en" original-title onClick="document.getElementById('msg').style.display='none';"></input>
   </div>
 
