@@ -3,10 +3,12 @@ $uid = $_['uid'];
 $mh = $_['mailhost'];
 $mu = $_['mailuser'];
 $mp = $_['mailpwd'];
+echo $mh;
 ?>
 <form id="emailform">
   <fieldset class="personalblock">
     <strong>Emaileinstellungen</strong>
+    <br>
     <label for="mh">IMAP-Server</label>
     <input type="text" name="mh" id="mh" value="<?php echo $mh; ?>" placeholder="IMAP-Server" original-title="">
     <br>
