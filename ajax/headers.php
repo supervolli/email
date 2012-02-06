@@ -37,7 +37,9 @@ for ( $i=$offset; $i < ( $offset + 20 ); $i++ ){
 	$header = imap_headerinfo( $mbox,( $anzahl - $i ), 20, 100 );
     if ( $header ) {
 		$subject = imap_utf8( $header->subject );
-		$date = date( "d. M Y H:m",$header->udate );
+		# Mail von heute?
+		$datetmp = $header->udate;
+		$date = ( date("d M Y") == date("d M Y", $datetmp) ) ? date( "H:m", $datetmp ) : date( "d. M. y, $datetmp" );
  		$from = imap_utf8( $header->fetchfrom );
 		$message_id = $header->message_id;
 		$unseen = $header->Unseen;
