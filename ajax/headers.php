@@ -39,15 +39,17 @@ for ( $i=$offset; $i < ( $offset + 20 ); $i++ ){
 		$subject = imap_utf8( $header->subject );
 		# Mail von heute?
 		$datetmp = $header->udate;
-		$date = ( date("d M Y") == date("d M Y", $datetmp) ) ? date( "H:m", $datetmp ) : date( "d. M. y", $datetmp );
+		$date = ( date("d M Y") == date("d M Y", $datetmp) ) ? date( "H:m", $datetmp ) : date( "d. m. y", $datetmp );
  		$from = imap_utf8( $header->fetchfrom );
 		$message_id = $header->message_id;
 		$unseen = $header->Unseen;
+		$flagged = $header->Flagged;
+		$answered = $header->Answered;
 	#	# Ausgabe eines Headers
 		echo '<li class="header">';
-		echo '  <b>'.$from.' '.$date.'</b><br>';
-		echo '  '.$subject.'<br>';
-		echo '   Ein kleines bisschen vom Body...';
+		echo '  <span class="from">'.$from.'</span> <span class="date">'.$date.'</span>';
+		echo '  <span class="subject'.$unseen.'">'.$subject.'</span>';
+		echo '  <span class="mailbody">Ein kleines bisschen vom Body...</span>';
 		echo '</li>';
     }
 }
