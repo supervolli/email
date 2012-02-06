@@ -44,5 +44,4 @@ $mailssl = ( $mailssl ) ? '/ssl' : '';
 if( $mbox ) {
   imap_close( $mbox );	
 }
-}
 ?>
