@@ -3,6 +3,18 @@
 </div>
 <div id="leftcontent" class="leftcontent">folders</div>
 
+<script type="text/javascript">
+<!--
+/* Erstes Laden der Ordner */
+$.ajax({
+	  url: "folders.php",
+	  cache: false,
+	  success: function(html){
+	    $("#leftcontent").append(html);
+	  }
+	});
+//-->
+</script>
 
 <?php 
 #Variablen abholen
