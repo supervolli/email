@@ -64,5 +64,6 @@ td.date {
 }
 
 td.subject {
-	color: #666;	
+	color: #666;
+	line-height: 1.3em;	
 }
