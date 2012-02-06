@@ -36,6 +36,8 @@ echo '  <li class="folder_head">Postf&auml;cher --- reload</li>';
 foreach ($folders as $key=>$val){
   # Postfachnamen bearbeiten
   $folder = str_replace('{'.$mailhost.'}','',imap_utf7_decode($val->name));
+  $tmpfolder = $folder; # wird für den String unten benötigt
+  $tmpfolder = str_replace( 'INBOX.', '', $tmpfolder );
   $folder = ( $folder=='INBOX' ) ? 'Posteingang' : $folder;
   $folder = str_replace( 'INBOX.', '', $folder );
   # Postfachstatus abfragen unseen->ungesehene Nachrichten
