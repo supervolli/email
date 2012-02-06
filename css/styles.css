@@ -52,6 +52,7 @@ li.header table {
 	width:100%;
 	white-space: normal !important;
 	line-height: 1.2em;
+	background: #FEFEFE;
 }
 
 td.from {
@@ -65,5 +66,10 @@ td.date {
 
 td.subject {
 	color: #666;
-	line-height: 1.3em;	
+	line-height: 1.3em;
+	white-space: nowrap;	
+}
+
+td.mailbody {
+	color: #555;
 }
