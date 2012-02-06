@@ -39,14 +39,14 @@ for ( $i=$offset; $i < ( $offset + 20 ); $i++ ){
 	$subject = imap_utf8( $header->subject );
 	$date = date( "d. M Y H:m",$header->udate );
 	$from = imap_utf8( $header->fetchfrom );
-	$message_id = imap_uid( $mbox, $header->message_id );
+	$message_id = $header->message_id;
 	$unseen = $header->Unseen;
 	# Ausgabe eines Headers
-	echo '<li class="header">';
-	echo '  <b>'.$from.' '.$date'</b><br>';
-	echo '  '.$subject.'<br>';
-	echo '   Ein kleines bisschen vom Body...';
-	echo '</li>';
+#	echo '<li class="header">';
+#	echo '  <b>'.$from.' '.$date'</b><br>';
+#	echo '  '.$subject.'<br>';
+#	echo '   Ein kleines bisschen vom Body...';
+#	echo '</li>';
 }
 
 echo '</ul>';
