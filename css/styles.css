@@ -53,6 +53,7 @@ li.header table {
 	white-space: normal !important;
 	line-height: 1.2em;
 	background: #FEFEFE;
+	overflow: hidden;
 }
 
 td.from {
