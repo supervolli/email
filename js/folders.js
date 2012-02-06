@@ -5,15 +5,15 @@ function testJQuery(){
 		  alert("jQuery nicht geladen");
 }
 
-function loadHeaders( folder, offset ){
+function loadHeaders( folder ){
 	$.ajax({
-		  url: "ajax/headers.php?folder=" + folder + "&offset=" + offset;
+		  url: "ajax/headers.php?folder=" + folder;
 		  cache: false,
 		  success: function( headers ){
-		    $("#headers").html( headers );
+			  $("#headers").html( headers )
 		  },
 		  error: function ( error ) {
-			alert( error )
+			  alert( error )
 		  } 
 		});
 }
