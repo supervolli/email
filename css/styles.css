@@ -17,5 +17,7 @@
 
 .folder_head {
   	cursor: default;
-    background: #FAFAFA;
+    background: #FDFDFD;
+    border-bottom: 1px solid #F2F2F2;
+    padding: .5em .8em;
 }
