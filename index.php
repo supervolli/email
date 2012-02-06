@@ -15,10 +15,10 @@ OC_Util::addStyle('email','styles');        # Angepasste Styles
 OC_Util::addScript('email', 'getContent');  # Funktionen zum nachladen von Inhalten
 
 #Daten laden
-
 $uid = OC_User::getUser();
 $query=OC_DB::prepare("SELECT * FROM *PREFIX*email_connection WHERE uid='".$uid."'");
 $data=$query->execute(array('bar'))->fetchAll();
+
 $mailuser=$data[0]['mailuser']; 
 $mailhost=$data[0]['mailhost'];
 $mailpwd=$data[0]['mailpwd'];
