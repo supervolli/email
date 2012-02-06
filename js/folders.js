@@ -5,9 +5,9 @@ function testJQuery(){
 		  alert("jQuery nicht geladen");
 }
 
-function loadHeaders( folder ){
+function loadHeaders( folder, offset ){
 	$.ajax({
-		  url: "ajax/headers.php?folder=" + folder + '&offset=0',
+		  url: "ajax/headers.php?folder=" + folder + '&offset=' + offset,
 		  cache: false,
 		  success: function( headers ){
 			  $("#headers").html( headers );
