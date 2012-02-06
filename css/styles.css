@@ -32,3 +32,10 @@
    padding: 0 0 0 25px;
    color: black;	
 }
+
+#headers {
+  position: absolute;
+  top: 6.4em;
+  left: 28em;
+  width: 23em;	
+}
