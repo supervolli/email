@@ -20,6 +20,8 @@
     background: #FDFDFD;
     border-bottom: 1px solid #F2F2F2;
     padding: .7em .8em !important;
+    color: #DDD;
+    font-weight: bold;
 }
 
 .folder {
@@ -37,7 +39,7 @@
 #headersdiv {
   position: absolute;
   top: 6.4em;
-  left: 28em;
+  left: 27.5em;
   width: 19em;	
 }
 
