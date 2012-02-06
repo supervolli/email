@@ -12,7 +12,9 @@ $.ajax({
 	  success: function( folders ){
 	    $("#leftcontent").html( folders );
 	  },
-	  error: alert ( "error" ) 
+	  error: function ( error ) {
+		alert( error )
+	  } 
 	});
 //-->
 </script>
