@@ -33,7 +33,7 @@ $mailssl=$data[0]['mailssl'];
 #  $template = "index";
 #}
 
-# Aktive Postfach, wenn nicht gesetzt, dann 0 (das erste)
+# Aktive Postfach, wenn nicht gesetzt, dann 0
 #$factive = isset($_GET['factive']) ? $_GET['factive'] : 0;
 
 # Welche Header sollen angezeigt werden (ab welcher Mail)
