@@ -1,7 +1,7 @@
 <div id="controls">
 	<input type="button" id="email_new" value="Neue Email"></input>
 </div>
-<div id="leftcontent" class="leftcontent">folders<a href="#" onClick="testJQuery">test</a></div>
+<div id="leftcontent" class="leftcontent">folders</div>
 
 
 <?php 
