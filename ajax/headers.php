@@ -29,17 +29,17 @@ $mailssl = ( $mailssl ) ? '/ssl' : '';
 $mbox = imap_open( $folder, $mailuser, $mailpwd );
 
 # Anzahl der Emails
-$anzahl = imap_num_msg( $mbox );
+#$anzahl = imap_num_msg( $mbox );
 
 
-for ($i=0; $i < 20; $i++){
-	$header = imap_headerinfo($mbox,($anzahl - $i), 20, 100);
-	$subject = imap_utf8($header->subject);
-	$date = date("d. M Y H:m",$header->udate);
-	$from = imap_utf8($header->fetchfrom);
+#for ($i=0; $i < 20; $i++){
+#	$header = imap_headerinfo($mbox,($anzahl - $i), 20, 100);
+#	$subject = imap_utf8($header->subject);
+#	$date = date("d. M Y H:m",$header->udate);
+#	$from = imap_utf8($header->fetchfrom);
 #	$message_id = $header->message_id);
-	$unseen = $header->Unseen;
-}
+#	$unseen = $header->Unseen;
+#}
 
 if( $mbox ) {
   imap_close( $mbox );	
