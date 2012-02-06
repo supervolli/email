@@ -48,10 +48,10 @@ ul#headers li {
 	font-size: 80%;	
 }
 
-span.from {
+td.from {
    font-weight: bold;
 }
 
-span.date {
+td.date {
 	text-align: right;	
 }
