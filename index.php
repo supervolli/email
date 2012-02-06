@@ -43,7 +43,7 @@ $mailssl=$data[0]['mailssl'];
 #$msg  = isset($_GET['msg']) ? $_GET['msg'] : 'nomail';
 
 
-$tmpl = new OC_TEMPLATE( "email", $template, "user" );
+$tmpl = new OC_TEMPLATE( "email", "index", "user" );
 $tmpl->assign( "uid",  $uid);
 $tmpl->assign( "mailuser",  $mailuser);
 $tmpl->assign( "mailhost",  $mailhost);

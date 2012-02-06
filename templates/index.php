@@ -1,3 +1,8 @@
+<div id="controls">
+	<input type="button" id="email_new" value="Neue Email"></input>
+</div>
+<div id="leftcontent" class="leftcontent">folders</div>
+
 <?php 
 #Variablen abholen
 $uid = $_['uid'];
@@ -15,10 +20,7 @@ $mp = $_['mailpwd'];
 #echo imap_last_error();
 #?>
 
-<!-- <div id="controls">
-<input type="button" id="email_new" value="Neue Email"></input>
-</div>
-
+<!-- 
 <div id="leftcontent" class="leftcontent">-->
 <?php
 #if ($mbox) {
