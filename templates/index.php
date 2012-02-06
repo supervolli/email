@@ -2,6 +2,7 @@
 	<input type="button" id="email_new" value="Neue Email"></input>
 </div>
 <div id="leftcontent" class="leftcontent">folders</div>
+<a href="#" onClick="testJQuery">test</a>
 
 <?php 
 #Variablen abholen

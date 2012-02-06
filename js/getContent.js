@@ -23,6 +23,13 @@ if (!xmlHttpObject)
     }
 }
 
+function testJQuery(){
+	if(typeof jQuery == "function")
+		  alert("jQuery geladen");
+		else
+		  alert("jQuery nicht geladen");
+}
+
 function loadContent(site, target)
 {
     xmlHttpObject.open('get',site);
