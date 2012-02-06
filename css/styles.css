@@ -45,7 +45,9 @@ ul#headers li {
 	display: block;
 	overflow: hidden;
 	height: 6em;
-	border: 1px solid #F2F2F2;
+	border-left: 1px solid #DDD;
+	border-right: 1px solid #F2F2F2;
+	border-bottom: 1px solid #F2F2F2;
 	font-size: 85%;	
 }
 
