@@ -4,3 +4,8 @@ function testJQuery(){
 		else
 		  alert("jQuery nicht geladen");
 }
+
+function loadHeaders(folder){
+	
+	
+}

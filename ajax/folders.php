@@ -38,7 +38,11 @@ foreach ($folders as $key=>$val){
   $folder = str_replace('{'.$mailhost.'}','',imap_utf7_decode($val->name));
   $folder = ( $folder=='INBOX' ) ? 'Posteingang' : $folder;
   $folder = str_replace( 'INBOX.', '', $folder );
-  echo '  <li class="folder">'.$folder.'</li>';
+  # Postfachstatus abfragen unseen->ungesehene Nachrichten
+  $status = imap_status($mbox, $val->name, SA_ALL);
+  $unseen = ( $status->unseen <> '0' ) ? " (<b>".$status->unseen."</b>)" : '' ;
+  
+  echo '  <li class="folder">'.$folder.$unseen.'</li>';
 }
 
 echo '</ul>';
