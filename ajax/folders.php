@@ -35,10 +35,10 @@ echo '  <li class="folder_head">Postf&auml;cher --- reload</li>';
 # Postfaecher einzelnd ausgeben
 foreach ($folders as $key=>$val){
   # Postfachnamen bearbeiten
-  $folder = str_replace($serverstring,'',imap_utf7_decode($val->name));
+  $folder = str_replace($mailhost,'',imap_utf7_decode($val->name));
   $folder = ( $folder=='INBOX' ) ? 'Posteingang' : $folder;
   $folder = str_replace( 'INBOX.', '', $folder );
-  echo '  <li>'.$folder.'</li>';
+  echo '  <li class="folder">'.$folder.'</li>';
 }
 
 echo '</ul>';
