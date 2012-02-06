@@ -34,7 +34,7 @@ echo '<ul class="headers">';
 for ( $i=$offset; $i < ( $offset + 20 ); $i++ ){
 	# Header einer Mail laden
 	$header = imap_headerinfo( $mbox,( $anzahl - $i ), 20, 100 );
-#	$subject = imap_utf8( $header->subject );
+	$subject = imap_utf8( $header->subject );
 #	$date = date( "d. M Y H:m",$header->udate );
 #	$from = imap_utf8( $header->fetchfrom );
 #	$message_id = $header->message_id;
@@ -42,7 +42,7 @@ for ( $i=$offset; $i < ( $offset + 20 ); $i++ ){
 #	# Ausgabe eines Headers
 	echo '<li class="header">';
 #	echo '  <b>'.$from.' '.$date'</b><br>';
-#	echo '  '.$subject.'<br>';
+	echo '  '.$subject.'<br>';
 	echo '   Ein kleines bisschen vom Body...';
 	echo '</li>';
 }
