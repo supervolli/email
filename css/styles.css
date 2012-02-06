@@ -42,6 +42,7 @@
 }
 
 ul#headers li {
+	display: block;
 	overflow: hidden;
 	height: 5em;
 	border: 1px solid #F2F2F2;
@@ -53,28 +54,31 @@ li.header table {
 	white-space: normal !important;
 	line-height: 1.2em;
 	background: #FEFEFE;
-	overflow: hidden;
 }
 
 td.from {
    font-weight: bold;
+   overflow: hidden;
 }
 
 td.date {
 	text-align: right;
 	color: #888;
+	overflow: hidden;
 }
 
 td.subject {
 	color: #666;
 	line-height: 1.3em;
-	white-space: nowrap;	
+	white-space: nowrap;
+	overflow: hidden;	
 }
 
 td.subjectU {
     font-weight: bold;
     line-height: 1.3em;
 	white-space: nowrap;
+	overflow: hidden;
 }
 
 td.mailbody {
