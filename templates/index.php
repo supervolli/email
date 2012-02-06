@@ -9,9 +9,10 @@
 $.ajax({
 	  url: "folders.php",
 	  cache: false,
-	  success: function(html){
-	    $("#leftcontent").append(html);
-	  }
+	  success: function( folders ){
+	    $("#leftcontent").html( folders );
+	  },
+	  error: alert ( "error" ) 
 	});
 //-->
 </script>
