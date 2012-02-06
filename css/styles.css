@@ -70,6 +70,10 @@ td.subject {
 	white-space: nowrap;	
 }
 
+td.subjectU {
+    font-weight: bold;	
+}
+
 td.mailbody {
 	color: #555;
 }
