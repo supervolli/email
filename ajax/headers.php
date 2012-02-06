@@ -38,13 +38,13 @@ for ( $i=$offset; $i < ( $offset + 20 ); $i++ ){
 	if( $header ) {
 		echo imap_last_error();
 		$subject = imap_utf8( $header->subject );
-	#	$date = date( "d. M Y H:m",$header->udate );
-	#	$from = imap_utf8( $header->fetchfrom );
-	#	$message_id = $header->message_id;
-	#	$unseen = $header->Unseen;
+		$date = date( "d. M Y H:m",$header->udate );
+		$from = imap_utf8( $header->fetchfrom );
+		$message_id = $header->message_id;
+		$unseen = $header->Unseen;
 	#	# Ausgabe eines Headers
 		echo '<li class="header">';
-	#	echo '  <b>'.$from.' '.$date'</b><br>';
+		echo '  <b>'.$from.' '.$date'</b><br>';
 		echo '  '.$subject.'<br>';
 		echo '   Ein kleines bisschen vom Body...';
 		echo '</li>';
