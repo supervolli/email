@@ -30,7 +30,7 @@ $mbox = imap_open( $folder, $mailuser, $mailpwd );
 # Anzahl der Emails
 $anzahl = imap_num_msg( $mbox );
 
-
+echo '<ul>';
 
 for ( $i=$offset; $i < ( $offset + 20 ); $i++ ){
 	# Header einer Mail laden
@@ -54,13 +54,14 @@ for ( $i=$offset; $i < ( $offset + 20 ); $i++ ){
 		echo '</table>';
 		echo '</li>';
     }
-    if ( ($offset + 20) < $anzahl ) {
-    	echo '<li class="mehrmails">';
-    	echo '<a href="#" onClick="loadHeaders(\''.$folder.'\', '.($offset + 20).' )">Weitere 20 Mails laden</a>'; 
-    	echo '</li>';
-    }
 }
 
+# Noch weitere Mails zum Laden da?
+if ( ($offset + 20) < $anzahl ) {
+   	echo '<li class="mehrmails">';
+   	echo '<a href="#" onClick="loadHeaders(\''.$folder.'\', '.($offset + 20).' )">Weitere 20 Mails laden</a>'; 
+   	echo '</li>';
+}
 
 if( $mbox ) {
   imap_close( $mbox );	
