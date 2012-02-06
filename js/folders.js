@@ -5,7 +5,6 @@ function testJQuery(){
 		  alert("jQuery nicht geladen");
 }
 
-function loadHeaders(folder){
-	
-	
+function loadHeaders( folder ){
+	alert( folder );
 }

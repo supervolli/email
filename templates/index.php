@@ -20,58 +20,6 @@ $.ajax({
 </script>
 
 <?php 
-#Variablen abholen
-#$uid = $_['uid'];
-#$mh = "{".$_['mailhost'].":993/imap/ssl/novalidate-cert}";
-#$mu = $_['mailuser'];
-#$mp = $_['mailpwd'];
-#$factive = $_['factive']; #Aktives Postfach
-#$hstart = $_['hstart']; #Bei welchem Header beginnen
-#$msg = $_['msg']; # Zu ladene Email
-
-#$display = ($msg == 'nomail') ? 'none' : 'block';
-
-#Mailbox oeffnen
-#$mbox = imap_open($mh."INBOX", $mu, $mp);
-#echo imap_last_error();
-#if ($mbox) {
-#  #Postfaecher abholen
-#  $folders=imap_getmailboxes($mbox,$mh,"*");
-#  #Anzahl der Emails gesamt
-#  $mgesamt=imap_num_msg($mbox);
-#
-  # Sortieren... der Ordner
-#  sort($folders);
-#
-#  if ($folders == false) {
-#      echo "Abruf fehlgeschlagen";
-#  } else {
-#      echo "<ul id=\"folders\">";
-#      #echo "<li>".$mgesamt." Emails</li>";
-
-#      foreach ($folders as $key=>$val) {
-#          # Postfachnamen bearbeiten
-#          $fname=str_replace($mh,'',imap_utf7_decode($val->name));
- #         $fname = ($fname=='INBOX') ? 'Posteingang'.$neu : $fname;
-#          $fname=str_replace('INBOX.','', $fname );
-          
-          # Postfachstatus
-#          $fstatus=imap_status($mbox, $val->name, SA_ALL);
-#          echo imap_last_error();
- #         $funseen=($fstatus->unseen <> '0') ? " (<b>".$fstatus->unseen."</b>)" : '' ;
-
-          # Postfach aktiv?
-#          $fclass =  ($factive == $key) ? ' class="active"' : '';
-
-	  # Postfach anzeigen
-#          echo "<li".$fclass."><a href=\"index.php?factive=".$key."\">".$fname.$funseen."</a></li>";
-  
-#      }
-#      echo "</ul>";
-#  }
-#}
-
-#echo '</div> 
 #      <div id="rightcontent" class="rightcontent">';
  
 #  $folder = $folders[$factive]->name;

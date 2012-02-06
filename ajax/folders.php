@@ -41,8 +41,8 @@ foreach ($folders as $key=>$val){
   # Postfachstatus abfragen unseen->ungesehene Nachrichten
   $status = imap_status($mbox, $val->name, SA_ALL);
   $unseen = ( $status->unseen <> '0' ) ? " (<b>".$status->unseen."</b>)" : '' ;
-  
-  echo '  <li class="folder">'.$folder.$unseen.'</li>';
+  # Postfacheintrag ausgeben
+  echo '  <li class="folder" onclick="loadHeaders(\''.$val->name.'\')">'.$folder.$unseen.'</li>';
 }
 
 echo '</ul>';
