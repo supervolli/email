@@ -40,3 +40,18 @@
   left: 28em;
   width: 23em;	
 }
+
+ul#headers li {
+	overflow: hidden;
+	height: 4em;
+	border-bottom: 1px solid #F2F2F2;
+	font-size: 80%;	
+}
+
+span.from {
+   font-weight: bold;
+}
+
+span.date {
+	text-align: right;	
+}

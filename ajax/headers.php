@@ -40,7 +40,7 @@ for ( $i=$offset; $i < ( $offset + 20 ); $i++ ){
 		# Mail von heute?
 		$datetmp = $header->udate;
 		$date = ( date("d M Y") == date("d M Y", $datetmp) ) ? date( "H:m", $datetmp ) : date( "d. m. y", $datetmp );
- 		$from = imap_utf8( $header->fetchfrom );
+ 		$from = trim(imap_utf8( $header->fetchfrom ));
 		$message_id = $header->message_id;
 		$unseen = $header->Unseen;
 		$flagged = $header->Flagged;
