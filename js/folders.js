@@ -7,7 +7,7 @@ function testJQuery(){
 
 function loadHeaders( folder ){
 	$.ajax({
-		  url: "ajax/headers.php?folder=" + folder,
+		  url: "ajax/headers.php?folder=" + folder + '&offset=0',
 		  cache: false,
 		  success: function( headers ){
 			  $("#headers").html( headers );
