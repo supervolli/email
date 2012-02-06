@@ -24,14 +24,17 @@ $serverstring = '{'.$mailhost.':'.$mailport.'/imap'.$mailssl.'/novalidate-cert}I
 
 # Postfaecher abfragen
 $mbox = imap_open( $serverstring, $mailuser, $mailpwd );
-
 if ( $mbox ){
   $folders = imap_getmailboxes($mbox, '{'.$mailhost.'}', '*');
-  echo imap_last_error();
+  sort( $folders );
 }
 
 echo '<ul>';
 echo '  <li class="folder_head">Postf&auml;cher --- reload</li>';
+# Postfaecher ausgeben
+foreach ($folders as $key=>$val){
+  echo '  <li>'.$key->name.'</li>';
+}
 echo '</ul>';
 
 ($mbox) ? imap_close( $mbox ) : '';
