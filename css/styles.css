@@ -60,5 +60,9 @@ td.from {
 
 td.date {
 	text-align: right;
-	color: #CCC;
+	color: #888;
+}
+
+td.subject {
+	color: #666;	
 }
