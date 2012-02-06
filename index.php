@@ -11,7 +11,7 @@ require( 'template.php' );
 OC_App::setActiveNavigationEntry('email_index');
 
 # Style hinzufuegen
-OC_Util::addStyle('email','styles');
+OC_Util::addStyle('email','styles');        # Angepasste Styles
 OC_Util::addScript('email', 'getContent');  # Funktionen zum nachladen von Inhalten
 
 #Daten laden
