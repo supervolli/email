@@ -10,7 +10,11 @@ function loadHeaders( folder, offset ){
 		  url: "ajax/headers.php?folder=" + folder + "&offset=" + offset;
 		  cache: false,
 		  success: function( headers ){
-		    $("#headers").append( headers );
+			if (offset == 0 ){
+				$("#headers").html( headers );
+			} else {
+		        $("#headers").append( headers );
+			}
 		  },
 		  error: function ( error ) {
 			alert( error )

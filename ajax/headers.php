@@ -10,6 +10,8 @@ OC_Util::checkAppEnabled('email');
 $folder = $_GET['folder']; # zu oeffnendes Postfach
 $offset = $_GET['offset']; # ab welcher Mail soll geladen werden
 
+echo $folder.' '.$offset;
+
 $uid = OC_User::getUser();
 $query = OC_DB::prepare("SELECT * FROM *PREFIX*email_connection WHERE uid='".$uid."'");
 $data = $query->execute(array('bar'))->fetchAll();
