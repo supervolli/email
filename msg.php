@@ -10,6 +10,7 @@
   # Email Verbindung aus DB holen
   $query = OC_DB::prepare("SELECT * FROM *PREFIX*email_connection WHERE uid='".$uid."'");
   $data = $query->execute(array('bar'))->fetchAll();
+  
   $mu = $data[0]['mailuser']; 
   $mh = $data[0]['mailhost'];
   $mp = $data[0]['mailpwd'];
