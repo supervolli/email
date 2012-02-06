@@ -5,7 +5,7 @@
   
   # Variablen laden
   $uid = OC_User::getUser();
-  $msg = $_GET['m'];
+  $msg = $_GET['m']; 
   
   # Email Verbindung aus DB holen
   $query = OC_DB::prepare("SELECT * FROM *PREFIX*email_connection WHERE uid='".$uid."'");
