@@ -20,7 +20,7 @@ $.ajax({
 </script>
 
 <div id="headersdiv">
-	<ul class="headers">&nbsp;</ul>
+	<ul id="headers">&nbsp;</ul>
 </div>
 
 <?php 
