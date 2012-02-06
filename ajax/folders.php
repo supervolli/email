@@ -6,9 +6,29 @@ require_once('../../../lib/base.php');
 OC_Util::checkLoggedIn();
 OC_Util::checkAppEnabled('email');
 
-# Nötige Variablen laden und anlegen 
+# Email Konfigurtion laden 
 $uid = OC_User::getUser();
+$query = OC_DB::prepare("SELECT * FROM *PREFIX*email_connection WHERE uid='".$uid."'");
+$data = $query->execute(array('bar'))->fetchAll();
 
-echo $uid;
+$mailuser = $data[0]['mailuser']; 
+$mailhost = $data[0]['mailhost'];
+$mailpwd  = $data[0]['mailpwd'];
+$mailport = $data[0]['mailport'];
+$mailssl  = $data[0]['mailssl'];
 
+# Wird SSL benutzt?
+$mailssl = ( $mailssl ) ? '/ssl' : '';
+
+$serverstring = '{'.$mailhost.':'.$mailport.'/imap'.$mailssl.'/novalidate-cert}INBOX'
+
+echo $serverstring;
+
+# Postfaecher abfragen
+$mbox = imap_open( $serverstring, $mailuser, $mailpwd );
+echo imap_last_error();
+
+echo 'Postf&auml;cher';
+echo '<ul>';
+echo '</ul>';
 ?>
