@@ -26,8 +26,7 @@
   $mbox = imap_open($mh, $mu, $mp);
   echo imap_last_error();
   
-  $mail = imap_body($mbox, $msg);
-  $body = imap_body($mail);
+  $body = imap_body($mbox, $msg);
   echo imap_qprint($body);
   
   if($mbox) {
