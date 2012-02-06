@@ -21,7 +21,7 @@
   $mssl = ( $mssl ) ? '/ssl' : '' ;
   
   # Server String zusammensetzen
-  $mh = '{'.$mh.':'.$mport.'imap'.$mssl.'/novalidate-cert}INBOX';
+  $mh = '{'.$mh.':'.$mport.'/imap'.$mssl.'/novalidate-cert}INBOX';
   
   $mbox = imap_open($mh, $mu, $mp);
   echo imap_last_error();
