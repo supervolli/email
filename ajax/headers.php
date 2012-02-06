@@ -10,7 +10,7 @@ OC_Util::checkAppEnabled('email');
 $folder = $_GET['folder']; # zu oeffnendes Postfach
 $offset = $_GET['offset']; # ab welcher Mail soll geladen werden
 
-echo $folder.' '.$offset;
+echo $folder;
 
 $uid = OC_User::getUser();
 $query = OC_DB::prepare("SELECT * FROM *PREFIX*email_connection WHERE uid='".$uid."'");
@@ -26,7 +26,7 @@ $mailssl  = $data[0]['mailssl'];
 $mailssl = ( $mailssl ) ? '/ssl' : '';
 
 # Ausgewaehltes Postfach öffnen und Header laden
-$mbox = imap_open( $folder, $mailuser, $mailpwd );
+#$mbox = imap_open( $folder, $mailuser, $mailpwd );
 
 # Anzahl der Emails
 #$anzahl = imap_num_msg( $mbox );
