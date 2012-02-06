@@ -1,7 +1,7 @@
 <div id="controls">
 	<input type="button" id="email_new" value="Neue Email"></input>
 </div>
-<div id="leftcontent" class="leftcontent">folders</div>
+<div id="folders">folders</div>
 
 <script type="text/javascript">
 <!--
@@ -10,7 +10,7 @@ $.ajax({
 	  url: "ajax/folders.php",
 	  cache: false,
 	  success: function( folders ){
-	    $("#leftcontent").html( folders );
+	    $("#folders").html( folders );
 	  },
 	  error: function ( error ) {
 		alert( error )

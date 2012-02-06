@@ -1,55 +1,8 @@
-div.msg {
-  position: absolute;
-  margin-left: -350px;
-  top: 100px;
-  left: 50%;
-  width: 700px;
-  height: 600px;
-  z-index: 1500;
-  background-color: #FCFCFC;
-  border: 1px solid #000;
-  white-space: normal; 
+#folders {
+ 	position: fixed;
+ 	overflow: auto;
+ 	top: 6.4em;
+ 	width: 10em;
+ 	background: #F8F8F8;
+ 	border-right: 1px solid #DDD;
 }
-
-
-table.headers {
-  position: relative;
-  left: -5px;
-  width: 100%;
-  border-spacing: 0;
-  border-collapse: collapse;
-  white-space: nowrap;
-  margin: 0;
-}
-
-table.headers th {
-  color: #999;
-  border-bottom: 1px solid #DDD;
-  border-right: 1px solid #DDD;
-  height: 2em;
-  padding: 0.5em;
-  vertical-align: middle;
-}
-
-
-th.hstart {
-  text-align: center;
-}
-
-table.headers td {
-  border-right: 1px solid #DDD;
-  height: 1.5em;
-  padding: 0.5em;
-  vertical-align: middle;
-}
-
-
-td.subjU {
-  font-weight: bold;
-  white-space: normal;
-}
-
-td.subj {
-  white-space: normal;
-}
-
