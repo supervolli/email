@@ -54,7 +54,7 @@ for ( $i=$offset; $i < ( $offset + 20 ); $i++ ){
 		echo '</table>';
 		echo '</li>';
     }
-    if ( ($offset + 20) > $anzahl ) {
+    if ( ($offset + 20) < $anzahl ) {
     	echo '<li class="mehrmails">';
     	echo '<a href="#" onClick="loadHeaders(\''.$folder.'\', '.($offset + 20).' )">Weitere 20 Mails laden</a>'; 
     	echo '</li>';
