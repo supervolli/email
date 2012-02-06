@@ -31,15 +31,25 @@ $mbox = imap_open( $folder, $mailuser, $mailpwd );
 # Anzahl der Emails
 $anzahl = imap_num_msg( $mbox );
 
+echo '<ul class="headers">';
 
-for ($i=$offset; $i < ($offset + 20); $i++){
-	$header = imap_headerinfo($mbox,($anzahl - $i), 20, 100);
-	$subject = imap_utf8($header->subject);
-	$date = date("d. M Y H:m",$header->udate);
-	$from = imap_utf8($header->fetchfrom);
-	$message_id = $header->message_id;
+for ( $i=$offset; $i < ( $offset + 20 ); $i++ ){
+	# Header einer Mail laden
+	$header = imap_headerinfo( $mbox,( $anzahl - $i ), 20, 100 );
+	$subject = imap_utf8( $header->subject );
+	$date = date( "d. M Y H:m",$header->udate );
+	$from = imap_utf8( $header->fetchfrom );
+	$message_id = imap_uid( $header->message_id );
 	$unseen = $header->Unseen;
+	# Ausgabe eines Headers
+	echo '<li class="header">';
+	echo '  <b>'.from.'</b><br>';
+	echo '  '.$subject.'<br>';
+	echo '   Ein kleines bisschen vom Body...';
+	echo '</li>';
 }
+
+echo '</ul>';
 
 if( $mbox ) {
   imap_close( $mbox );	
