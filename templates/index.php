@@ -9,6 +9,7 @@
 $.ajax({
 	  url: "ajax/folders.php",
 	  cache: false,
+	  dataType: "text";
 	  success: function( folders ){
 	    $("#folders").html( folders );
 	  },
