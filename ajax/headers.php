@@ -22,9 +22,10 @@ $mailssl  = $data[0]['mailssl'];
 
 # Wird SSL benutzt?
 $mailssl = ( $mailssl ) ? '/ssl' : '';
+$mailssl = $mailssl.'/novalidate-cert';
 
 # Ausgewaehltes Postfach öffnen und Header laden
-$mbox = imap_open( $folder.'/novalidate-cert', $mailuser, $mailpwd );
+$mbox = imap_open( $folder, $mailuser, $mailpwd );
 
 # Anzahl der Emails
 $anzahl = imap_num_msg( $mbox );
