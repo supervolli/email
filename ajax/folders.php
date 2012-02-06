@@ -36,15 +36,16 @@ echo '  <li class="folder_head">Postf&auml;cher --- reload</li>';
 foreach ($folders as $key=>$val){
   # Postfachnamen bearbeiten
   $folder = str_replace('{'.$mailhost.'}','',imap_utf7_decode($val->name));
-  $tmpfolder = $folder; # wird für den String unten benötigt
-  $tmpfolder = str_replace( 'INBOX.', '', $tmpfolder );
+	  $tmpfolder = $folder; # wird für den String unten benötigt
+	  $tmpfolder = str_replace( 'INBOX', '', $tmpfolder );
+	  $tmpfolder = ( $tmpfolder == '' ) ? '' : '.'.$tmpfolder;
   $folder = ( $folder=='INBOX' ) ? 'Posteingang' : $folder;
   $folder = str_replace( 'INBOX.', '', $folder );
   # Postfachstatus abfragen unseen->ungesehene Nachrichten
   $status = imap_status($mbox, $val->name, SA_ALL);
   $unseen = ( $status->unseen <> '0' ) ? " (<b>".$status->unseen."</b>)" : '' ;
   # Postfacheintrag ausgeben
-  echo '  <li class="folder"><a href="#" onclick="loadHeaders(\''.$serverstring.'.'.$tmpfolder.'\', 0 )">'.$folder.$unseen.'</a></li>';
+  echo '  <li class="folder"><a href="#" onclick="loadHeaders(\''.$serverstring.$tmpfolder.'\', 0 )">'.$folder.$unseen.'</a></li>';
 }
 
 echo '</ul>';
