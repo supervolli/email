@@ -40,11 +40,11 @@ for ( $i=$offset; $i < ( $offset + 20 ); $i++ ){
 #	$message_id = $header->message_id;
 #	$unseen = $header->Unseen;
 #	# Ausgabe eines Headers
-#	echo '<li class="header">';
+	echo '<li class="header">';
 #	echo '  <b>'.$from.' '.$date'</b><br>';
 #	echo '  '.$subject.'<br>';
-#	echo '   Ein kleines bisschen vom Body...';
-#	echo '</li>';
+	echo '   Ein kleines bisschen vom Body...';
+	echo '</li>';
 }
 
 echo '</ul>';
