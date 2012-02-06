@@ -53,7 +53,11 @@ foreach ($folders as $key=>$val){
 
 echo '</ul>';
 
-echo 'loadHeaders(\''.$serverstring.$folder_one.'\', 0 )"';
+echo '<script type="text/javascript">';
+echo '<!--';
+echo '	loadHeaders(\''.$serverstring.$folder_one.'\', 0 );';
+echo '//-->';
+echo '</script>';
 
 ($mbox) ? imap_close( $mbox ) : '';
 ?>
