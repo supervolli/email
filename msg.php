@@ -25,4 +25,9 @@
   
   $mbox = imap_open($mh, $mu, $mp);
   echo imap_last_error();
+  
+  
+  if($mbox) {
+   imap_close($mbox);
+  }
 ?>
