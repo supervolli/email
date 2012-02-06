@@ -20,6 +20,9 @@ $mailssl  = $data[0]['mailssl'];
 # Wird SSL benutzt?
 $mailssl = ( $mailssl ) ? '/ssl' : '';
 
+# Das erste Postfach (folder) wird als Standard geladen
+$folder_one = '';
+
 $serverstring = '{'.$mailhost.':'.$mailport.'/imap'.$mailssl.'/novalidate-cert}INBOX';
 
 # Postfaecher abfragen
@@ -38,6 +41,7 @@ foreach ($folders as $key=>$val){
   $folder = str_replace('{'.$mailhost.'}','',imap_utf7_decode($val->name));
 	  $tmpfolder = $folder; # wird für den String unten benötigt
 	  $tmpfolder = str_replace( 'INBOX', '', $tmpfolder );
+  $folder_one = ( $folder_one == '' ) ? $tmpfolder : $folder_one;
   $folder = ( $folder=='INBOX' ) ? 'Posteingang' : $folder;
   $folder = str_replace( 'INBOX.', '', $folder );
   # Postfachstatus abfragen unseen->ungesehene Nachrichten
@@ -48,6 +52,8 @@ foreach ($folders as $key=>$val){
 }
 
 echo '</ul>';
+
+echo 'loadHeaders(\''.$serverstring.$folder_one.'\', 0 )"';
 
 ($mbox) ? imap_close( $mbox ) : '';
 ?>
