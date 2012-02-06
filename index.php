@@ -12,7 +12,7 @@ OC_App::setActiveNavigationEntry('email_index');
 
 # Style hinzufuegen
 OC_Util::addStyle('email','styles');        # Angepasste Styles
-OC_Util::addScript('email', 'getContent');  # Funktionen zum nachladen von Inhalten
+OC_Util::addScript('email', 'folders');     # Funktionen der Ordneranzeige
 
 #Daten laden
 $uid = OC_User::getUser();
