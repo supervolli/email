@@ -6,6 +6,7 @@ function testJQuery(){
 }
 
 function loadHeaders( folder, offset ){
+	alert(folder + offset);
 	$.ajax({
 		  url: "ajax/headers.php?folder=" + folder + "&offset=" + offset,
 		  cache: false,
