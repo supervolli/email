@@ -5,10 +5,10 @@
 
 <?php 
 #Variablen abholen
-$uid = $_['uid'];
-$mh = "{".$_['mailhost'].":993/imap/ssl/novalidate-cert}";
-$mu = $_['mailuser'];
-$mp = $_['mailpwd'];
+#$uid = $_['uid'];
+#$mh = "{".$_['mailhost'].":993/imap/ssl/novalidate-cert}";
+#$mu = $_['mailuser'];
+#$mp = $_['mailpwd'];
 #$factive = $_['factive']; #Aktives Postfach
 #$hstart = $_['hstart']; #Bei welchem Header beginnen
 #$msg = $_['msg']; # Zu ladene Email
@@ -18,11 +18,6 @@ $mp = $_['mailpwd'];
 #Mailbox oeffnen
 #$mbox = imap_open($mh."INBOX", $mu, $mp);
 #echo imap_last_error();
-#?>
-
-<!-- 
-<div id="leftcontent" class="leftcontent">-->
-<?php
 #if ($mbox) {
 #  #Postfaecher abholen
 #  $folders=imap_getmailboxes($mbox,$mh,"*");
