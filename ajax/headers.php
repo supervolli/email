@@ -26,7 +26,7 @@ $mailssl  = $data[0]['mailssl'];
 $mailssl = ( $mailssl ) ? '/ssl' : '';
 
 # Ausgewaehltes Postfach öffnen und Header laden
-$mbox = imap_open( $folder, $mailuser, $mailpwd );
+$mbox = imap_open( $folder.'/novalidate-cert', $mailuser, $mailpwd );
 
 # Anzahl der Emails
 $anzahl = imap_num_msg( $mbox );
@@ -36,7 +36,6 @@ echo '<ul class="headers">';
 for ( $i=$offset; $i < ( $offset + 20 ); $i++ ){
 	# Header einer Mail laden
 	$header = imap_headerinfo( $mbox,( $anzahl - $i ), 20, 100 );
-	echo imap_last_error();
 	$subject = imap_utf8( $header->subject );
 	$date = date( "d. M Y H:m",$header->udate );
 	$from = imap_utf8( $header->fetchfrom );
@@ -44,7 +43,7 @@ for ( $i=$offset; $i < ( $offset + 20 ); $i++ ){
 	$unseen = $header->Unseen;
 	# Ausgabe eines Headers
 	echo '<li class="header">';
-#	echo '  <b>'.$from.' '.$date'</b><br>';
+	echo '  <b>'.$from.' '.$date'</b><br>';
 	echo $subject.'<br>';
 	echo '   Ein kleines bisschen vom Body...';
 	echo '</li>';
