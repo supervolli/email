@@ -19,7 +19,9 @@ $.ajax({
 //-->
 </script>
 
-<div id="headers">Headers</div>
+<div id="headersdiv">
+	<ul class="headers">&nbsp;</ul>
+</div>
 
 <?php 
 #      <div id="rightcontent" class="rightcontent">';
