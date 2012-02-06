@@ -20,7 +20,7 @@ $mailssl  = $data[0]['mailssl'];
 # Wird SSL benutzt?
 $mailssl = ( $mailssl ) ? '/ssl' : '';
 
-$serverstring = '{'.$mailhost.':'.$mailport.'/imap'.$mailssl.'/novalidate-cert}INBOX'
+$serverstring = '{'.$mailhost.':'.$mailport.'/imap'.$mailssl.'/novalidate-cert}INBOX';
 
 echo $serverstring;
 
