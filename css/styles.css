@@ -48,6 +48,11 @@ ul#headers li {
 	font-size: 80%;	
 }
 
+li.header table {
+	width:100%;
+	white-space: normal !important;	
+}
+
 td.from {
    font-weight: bold;
 }
