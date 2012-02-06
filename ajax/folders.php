@@ -20,17 +20,18 @@ $mailssl  = $data[0]['mailssl'];
 # Wird SSL benutzt?
 $mailssl = ( $mailssl ) ? '/ssl' : '';
 
-#$serverstring = '{'.$mailhost.':'.$mailport.'/imap'.$mailssl.'/novalidate-cert}INBOX';
-
-echo $serverstring;
+$serverstring = '{'.$mailhost.':'.$mailport.'/imap'.$mailssl.'/novalidate-cert}INBOX';
 
 # Postfaecher abfragen
 $mbox = imap_open( $serverstring, $mailuser, $mailpwd );
-echo imap_last_error();
 
+if ( $mbox ){
+  $folders = imap_getmailboxes($mbox, '{'.$mailhost.'}', '*');
+  echo imap_last_error();
+}
 
 echo '<ul>';
-echo '  <li class="folder_head">Postf&auml;cher</li>';
+echo '  <li class="folder_head">Postf&auml;cher --- reload</li>';
 echo '</ul>';
 
 ($mbox) ? imap_close( $mbox ) : '';
