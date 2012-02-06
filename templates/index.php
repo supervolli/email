@@ -7,7 +7,7 @@
 <!--
 /* Erstes Laden der Ordner */
 $.ajax({
-	  url: "folders.php",
+	  url: "ajax/folders.php",
 	  cache: false,
 	  success: function( folders ){
 	    $("#leftcontent").html( folders );
