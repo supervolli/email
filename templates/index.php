@@ -1,8 +1,8 @@
 <div id="controls">
 	<input type="button" id="email_new" value="Neue Email"></input>
 </div>
-<div id="leftcontent" class="leftcontent">folders</div>
-<a href="#" onClick="testJQuery">test</a>
+<div id="leftcontent" class="leftcontent">folders<a href="#" onClick="testJQuery">test</a></div>
+
 
 <?php 
 #Variablen abholen
