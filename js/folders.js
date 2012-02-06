@@ -6,5 +6,14 @@ function testJQuery(){
 }
 
 function loadHeaders( folder ){
-	alert( folder );
+	$.ajax({
+		  url: "ajax/headers.php?folder=" + folder,
+		  cache: false,
+		  success: function( headers ){
+		    $("#headers").html( headers );
+		  },
+		  error: function ( error ) {
+			alert( error )
+		  } 
+		});
 }
