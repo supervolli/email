@@ -10,7 +10,7 @@ function loadHeaders( folder ){
 		  url: "ajax/headers.php?folder=" + folder;
 		  cache: false,
 		  success: function( headers ){
-			  $("#headers").html( headers )
+			  $("#headers").html( headers );
 		  },
 		  error: function ( error ) {
 			  alert( error )
