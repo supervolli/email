@@ -43,7 +43,7 @@ for ( $i=$offset; $i < ( $offset + 20 ); $i++ ){
 	$unseen = $header->Unseen;
 	# Ausgabe eines Headers
 	echo '<li class="header">';
-	echo '  <b>'.from.'</b><br>';
+	echo '  <b>'.$from.' '.$date'</b><br>';
 	echo '  '.$subject.'<br>';
 	echo '   Ein kleines bisschen vom Body...';
 	echo '</li>';
