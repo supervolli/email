@@ -31,10 +31,16 @@ if ( $mbox ){
 
 echo '<ul>';
 echo '  <li class="folder_head">Postf&auml;cher --- reload</li>';
-# Postfaecher ausgeben
+
+# Postfaecher einzelnd ausgeben
 foreach ($folders as $key=>$val){
-  echo '  <li>'.$key->name.'</li>';
+  # Postfachnamen bearbeiten
+  $folder = str_replace($serverstring,'',imap_utf7_decode($val->name));
+  $folder = ( $folder=='INBOX' ) ? 'Posteingang' : $folder;
+  $folder = str_replace( 'INBOX.', '', $folder );
+  echo '  <li>'.$folder.'</li>';
 }
+
 echo '</ul>';
 
 ($mbox) ? imap_close( $mbox ) : '';
