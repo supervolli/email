@@ -71,7 +71,7 @@ for ( $i=$offset; $i < ( $offset + 30 ); $i++ ){
 		$unseen = ( $unseen == 'U' ) ? ' header_new' : '';
 		
 		# Email Struktur
-		$struckture = imap_fetchstructure($mbox, ( $anzahl - $i ) );
+		$structure = imap_fetchstructure($mbox, ( $anzahl - $i ) );
 		$body = $structure->type;
 #		$body = imap_fetchbody( $mbox, ( $anzahl - $i ), '1.1', 2);
 #		$body = imap_utf8( $body );
