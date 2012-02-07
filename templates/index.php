@@ -19,15 +19,16 @@ $.ajax({
 	  	  $("#folders").html( folders );
 	  	  // Was passiert bei Klick auf Ordner
 		  $("li#folder").click(function(){
-			  // Dunkel werden lassen
+			  //alle erstmal aufhellen
+			  $("#folder")addClass("folder");
+			  // Den einen dunkel werden lassen
               $(this).addClass("folder_sel");
               //Postfach lasden
 			  loadHeaders($(this).find("input").val(), 0);
 		  });
 		  //Ersten Ordner laden
-		  erster = $("#folder").find(":first");
-		  erster.addClass("folder_sel");
-		  loadHeaders(erster.find("input").val(), 0);
+		  $("#folder:first").addClass("folder_sel");
+		  loadHeaders($("#folder:first").find("input").val(), 0);
 	  },
 	  error: function ( error ) {
 		alert( error )
