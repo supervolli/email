@@ -1,3 +1,11 @@
-Hallo! Das hier ist ein Freizeitprojekt. Ich versuche mir hier ein Plugin zu basteln, mit dem ich meinen (erstmal nur einen) Emailaccount mit ownCloud verbinden kann, um dann aus ownCloud heraus meine Mails ohne extra Login oder so abzurufen. Wie gesagt: Hobby. Ich bin ein lausiger Programmierer. Vielleicht sieht das ja jemand und bastelt selbst was Vernuenftiges! Quasi als Anregung. Na denn!
+email ist eine App für ownCloud. Mit dieser soll es möglich sein, Emails von einem IMAP-Konto abzuholen, zu bearbeiten und zu senden.
 
-Na endlich. Git in Eclipse. Der vi ist doch etwas zu unkomfortabel.
+In dieser Version möglich:
+* Anzeigen der Postfächer
+* Anzeigen der Mailheader
+
+Konfiguration muss noch manuell auf dem Server erfolgen.
+
+Da ich kein Programmierer bin, bin ich für jede Hilfe dankbar. Also Branch erstellen!
+
+supervolli
