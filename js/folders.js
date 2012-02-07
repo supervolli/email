@@ -15,6 +15,9 @@ function loadHeaders( folder, offset ){
 			  } else {
 				  $("#headers").append( headers );
 			  }
+			  $("#folder").click(function(){
+			  	alert('test');
+			  });
 		  },
 		  error: function ( error ) {
 			  alert( error )
