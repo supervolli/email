@@ -1,6 +1,6 @@
 <?php
 
-function get_body( ){
+function getBody( ){
 	return 'the body';
 }
 
