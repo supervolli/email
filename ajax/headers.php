@@ -39,7 +39,7 @@ for ( $i=$offset; $i < ( $offset + 30 ); $i++ ){
 		$subject = imap_utf8( $header->subject );
 		# Mail von heute?
 		$datetmp = $header->udate;
-		$date = ( date("d M Y") == date("d M Y", $datetmp) ) ? date( "H:m", $datetmp ) : date( "d.M.y", $datetmp );
+		$date = ( date("d M Y") == date("d M Y", $datetmp) ) ? date( "H:m", $datetmp ) : date( "d.m.y", $datetmp );
  		$from = trim(imap_utf8( $header->fetchfrom ));
 		$message_id = $header->message_id;
 		$unseen = $header->Unseen;
@@ -47,6 +47,8 @@ for ( $i=$offset; $i < ( $offset + 30 ); $i++ ){
 		$answered = $header->Answered;
 		# Nicht gesehene Mail
 		$unseen = ( $unseen == 'U' ) ? ' header_new' : '';
+		# Body Auszug laden
+		$body = imap_fetchbody($mbox, ( $anzahl - $i ), 1, 2);
 		# Ausgabe eines Headers
 		echo '<li class="header'.$unseen.'">';
 		echo '<b>'.$date.'&nbsp;&nbsp;&nbsp;'.$from.'</b><br>';
