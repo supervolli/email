@@ -17,7 +17,7 @@ $.ajax({
 	  success: function( folders ){
 	  	  $("#folders").html( folders );
 		  $("li#folder").click(function(){
-			  	alert('test');
+			  	alert($(this input).value);
 			  });
 	  },
 	  error: function ( error ) {
