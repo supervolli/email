@@ -57,7 +57,7 @@ for ( $i=$offset; $i < ( $offset + 30 ); $i++ ){
 # Noch weitere Mails zum Laden da?
 if ( ($offset + 30) < $anzahl ) {
    	echo '<li id="mehrmails" class="mehrmails">';
-   	echo '<a name="mail'.$offset.'" href="#mail'.$offset.'" onClick="loadHeaders(\''.$folder.'\', '.($offset + 30).' )">Weitere Mails laden</a>'; 
+   	echo '    Weitere Mails laden'; 
    	echo '</li>';
 }
 
