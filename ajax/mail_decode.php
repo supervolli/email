@@ -19,7 +19,9 @@ function getBody( $mbox, $msgno ){
 				$body = quoted_printable_decode($body);
 			    break;
 		}
-		$body = $subtype.$body;
+		if ( strtolower( $subtype ) == 'html' ){
+			$body = convert_html_to_text($body);	
+		}	
 	} else {       # Multipart
 		
 		$body = 'multipart';
