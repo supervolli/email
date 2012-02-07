@@ -31,21 +31,11 @@
 }
 
 .folder_sel {
-   padding: .5em 1.8em;
-   white-space: nowrap;
-   overflow: hidden;
-   text-overflow: ellipsis;
-   cursor: pointer;
    background: #E8E8E8;
    border-top: 1px solid #CCC;	
 }
 
 .folder_hover {
-   padding: .5em 1.8em;
-   white-space: nowrap;
-   overflow: hidden;
-   text-overflow: ellipsis;
-   cursor: pointer;
       background: #EAEAEA;
 }
 
