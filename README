@@ -3,6 +3,10 @@ email ist eine App für ownCloud. Mit dieser soll es möglich sein, Emails von ein
 In dieser Version möglich:
 * Anzeigen der Postfächer
 * Anzeigen der Mailheader
+* Einfaches Anzeigen des Mailinhaltes
+
+Hier das Problem der veruenftigen Anordnung der DIVs... Argh... DIVs...
+Dann gestaltet sich das Anzeigen einer  Multipartmail als...schwierig...
 
 Konfiguration muss noch manuell auf dem Server erfolgen.
 
