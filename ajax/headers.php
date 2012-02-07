@@ -74,6 +74,7 @@ for ( $i=$offset; $i < ( $offset + 30 ); $i++ ){
 		$body = imap_body($mbox, ( $anzahl - $i ), 1, 2);
 		$body = imap_utf8($body);
 		$body = nl2br($body);
+		$body = ( $body == '') ? imap_body($mbox, ( $anzahl - $i ), 1.1, 2) : $body; 
 		# Ausgabe eines Headers
 		echo '<li class="header'.$unseen.'">';
 		echo '<b>'.$date.'&nbsp;&nbsp;&nbsp;'.$from.'</b><br>';
