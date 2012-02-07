@@ -21,5 +21,7 @@ $.ajax({
 </script>
 
 <div id="headersdiv">
-	<ul id="headers">&nbsp;</ul>
+	<ul id="headers">
+	  <li class="folder_head">Postf&auml;cher --- reload</li>
+	</ul>
 </div>
