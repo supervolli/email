@@ -23,8 +23,10 @@ function getBody( $mbox, $msgno ){
 			$body = convert_html_to_text($body);	
 		}	
 	} else {       # Multipart
-		
-		$body = 'multipart'.$struct->description;
+		$body = imap_fetchbody( $mbox, $msgno, 1.1, 2 );
+		if ($body == '') {
+			$body = imap_fetchbody( $mbox, $msgno, 1.2, 2 );
+		}
 	}
 	
 	return $body;
