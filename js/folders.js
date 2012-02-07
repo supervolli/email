@@ -22,6 +22,3 @@ function loadHeaders( folder, offset ){
 		});
 }
 
-$("#folder").click(function(){
-	alert('test');
-});

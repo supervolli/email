@@ -51,3 +51,8 @@ foreach ($folders as $key=>$val){
 
 ($mbox) ? imap_close( $mbox ) : '';
 ?>
+<script>
+$("#folder").click(function(){
+	alert('test');
+});
+</script>
