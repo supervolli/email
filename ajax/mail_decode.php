@@ -10,7 +10,7 @@ function getBody( $mbox, $msgno ){
 	
 	
 	if ($type==0){ # Text
-		$body = imap_fetchbody( $mbox, $msgno, 0, 2 );
+		$body = imap_fetchbody( $mbox, $msgno, 1.1, 2 );
 		switch ($encode){
 			case 3: 
 				$body = base64_decode($body);
