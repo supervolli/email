@@ -33,6 +33,7 @@
 .folder_sel {
    background: #E8E8E8;
    border-top: 1px solid #CCC;	
+   border-bottom: 1px solid #FEFEFE;
 }
 
 .folder_hover {
