@@ -26,7 +26,7 @@ function loadHeaders( folder, offset ){
 			  
 			  //Klick auf die Email
 			  $("li#mailheader").click(function(){
-				 $("#maildiv").html = $(this).find("#mailfolder").val() ; 
+				 $("div#maildiv").html( $(this).find("#mailfolder").val() ); 
 			  });
 		  },
 		  error: function ( error ) {
