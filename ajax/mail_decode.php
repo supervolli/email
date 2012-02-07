@@ -23,6 +23,7 @@ function getBody( $mbox, $msgno ){
 			$body = convert_html_to_text($body);	
 		}	
 	} else {       # Multipart
+		$body = get_part($mbox, $msgno, "TEXT/PLAIN");
 		#$body = imap_fetchbody( $mbox, $msgno, 1, 2 );
 		#$body = $type.' '.$subtype;
 	}
@@ -30,7 +31,7 @@ function getBody( $mbox, $msgno ){
 	return $body;
 }
 
-function get_mime_type(&$structure) { 
+function get_mime_type($structure) { 
     $primary_mime_type = array("TEXT", "MULTIPART", "MESSAGE", "APPLICATION", "AUDIO", "IMAGE", "VIDEO", "OTHER"); 
     if($structure->subtype) { 
          return $primary_mime_type[(int) $structure->type] . '/' . $structure->subtype; 
