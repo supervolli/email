@@ -65,16 +65,19 @@ li.header {
 
 span.header_subject {
     white-space: nowrap;
-    color: #333;	
+    color: #333;
+    cursor: pointer !important;	
 }
 
 span.header_body {
 	color: #666;
+	cursor: pointer !important;
 }
 
 li.header_new {
     background: #F0F0F0;
     border-bottom: 1px solid #DDD;
+    cursor: pointer !important;
 }
 
 li.mehrmails {
