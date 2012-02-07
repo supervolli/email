@@ -25,4 +25,4 @@ function loadHeaders( folder, offset ){
 $("#folder").click(function(){
 	$folder = $(this).find("input").value;
 	alert($folder);
-})
+});
