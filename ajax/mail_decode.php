@@ -24,7 +24,7 @@ function getBody( $mbox, $msgno ){
 		}	
 	} else {       # Multipart
 		
-		$body = 'multipart';
+		$body = 'multipart, '.$type.', '.$subtype;
 	}
 	
 	return $body;

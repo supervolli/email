@@ -55,7 +55,7 @@ li.header {
 	display: block;
 	overflow: hidden;
 	height: 6em;
-	line-height: 1.2em;
+	line-height: 1.3em;
 	border-left: 1px solid #DDD;
 	border-right: 1px solid #F2F2F2;
 	border-bottom: 1px solid #F2F2F2;
@@ -95,7 +95,7 @@ li.mehrmails {
 }
 
 #maildiv {
-    position: absolute;
+    position: fixed;
     top: 6.4em;
     left: 46.5em;
     background: #EEEEFF;
