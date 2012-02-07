@@ -7,7 +7,7 @@ function testJQuery(){
 
 function loadHeaders( folder, offset ){
 	$.ajax({
-		  url: "ajax/headers.php?folder=" + folder + '&offset=' + offset,
+		  url: "ajax/headers.php?folder=" + folder + "&offset=" + offset,
 		  cache: false,
 		  success: function( headers ){
 			  //Neues Postfach oder Zusätzliche Mails?
@@ -26,7 +26,9 @@ function loadHeaders( folder, offset ){
 			  
 			  //Klick auf die Email
 			  $("li#mailheader").click(function(){
-				 $("div#maildiv").html( $(this).find("#mailfolder").val() ); 
+				 folder = $(this).find("#mailfolder").val() ;
+				 msgno  = $(this).find("#mailnummer").val() ;
+				 loadMail( folder, msgno );
 			  });
 		  },
 		  error: function ( error ) {
@@ -35,3 +37,12 @@ function loadHeaders( folder, offset ){
 		});
 }
 
+function loadEmail( folder, msgno ){
+	$.ajax({
+		  url: "ajax/email_lesen.php?folder=" + folder + "&msgno=" + msgno,
+		  cache: false,
+		  success: function( email ){
+			  $("#maildiv").html( email );
+		  }
+	});
+}
