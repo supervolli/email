@@ -47,7 +47,8 @@
   position: absolute;
   top: 6.4em;
   left: 27.5em;
-  width: 19em;	
+  width: 19em;
+  overflow-y: auto;
 }
 
 li.header {
@@ -96,7 +97,7 @@ li.mehrmails {
 #maildiv {
     position: absolute;
     top: 6.4em;
-    left: 64.5em;
+    left: 46.5em;
     background: #EEEEFF;
     overflow: auto;	
 }
