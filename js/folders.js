@@ -38,6 +38,7 @@ function loadHeaders( folder, offset ){
 }
 
 function loadEmail( folder, msgno ){
+	alert( folder );
 	$.ajax({
 		  url: "ajax/email_lesen.php?folder=" + folder + "&msgno=" + msgno,
 		  cache: false,
