@@ -19,8 +19,8 @@ $.ajax({
 	  	  $("#folders").html( folders );
 	  	  // Was passiert bei Klick auf Ordner
 		  $("li#folder").click(function(){
-			  //alle erstmal aufhellen
-			  $("#folder").addClass("folder");
+			  //Altes selektiertes erstmal aufhellen
+			  $("#folder_sel").addClass("folder");
 			  // Den einen dunkel werden lassen
               $(this).addClass("folder_sel");
               //Postfach lasden
