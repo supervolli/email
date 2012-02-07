@@ -16,7 +16,7 @@ function loadHeaders( folder, offset ){
 				  $("#headers").append( headers );
 			  }
 			  //Klick auf "Weitere Mails laden"
-			  $("#mehrmails").click(function(){
+			  $("li#mehrmails").click(function(){
 				  alert("mehrladen")
 				/*  offset = offset + 30;
 				  loadHeaders( folder, offset );
