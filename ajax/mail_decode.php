@@ -24,8 +24,10 @@ function getBody( $mbox, $msgno ){
 		}	
 	} else {       # Multipart
 		$body = get_part($mbox, $msgno, "TEXT/PLAIN");
-		#$body = imap_fetchbody( $mbox, $msgno, 1, 2 );
-		#$body = $type.' '.$subtype;
+		if ( $body == '' ) {
+			$body = get_part($mbox, $msgno, "TEXT/HTML");
+			$body = convert_html_to_text($body);
+		}
 	}
 	
 	return $body;
