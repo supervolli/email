@@ -50,7 +50,6 @@ for ( $i=$offset; $i < ( $offset + 30 ); $i++ ){
 		# Body Auszug laden
 		$body = imap_fetchbody($mbox, ( $anzahl - $i ), 1, 2);
 		$body = imap_utf8($body);
-		$body = ReplaceImap($body);
 		$body = nl2br($body);
 		# Ausgabe eines Headers
 		echo '<li class="header'.$unseen.'">';
