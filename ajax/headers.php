@@ -49,6 +49,7 @@ for ( $i=$offset; $i < ( $offset + 30 ); $i++ ){
 		$unseen = ( $unseen == 'U' ) ? ' header_new' : '';
 		# Body Auszug laden
 		$body = imap_fetchbody($mbox, ( $anzahl - $i ), 1.1, 2);
+		$body = imap_last_error();
 		# Ausgabe eines Headers
 		echo '<li class="header'.$unseen.'">';
 		echo '<b>'.$date.'&nbsp;&nbsp;&nbsp;'.$from.'</b><br>';
