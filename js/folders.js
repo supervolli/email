@@ -28,7 +28,7 @@ function loadHeaders( folder, offset ){
 			  $("li#mailheader").click(function(){
 				 folder = $(this).find("#mailfolder").val() ;
 				 msgno  = $(this).find("#mailnummer").val() ;
-				 loadMail( folder, msgno );
+				 loadEmail( folder, msgno );
 			  });
 		  },
 		  error: function ( error ) {
