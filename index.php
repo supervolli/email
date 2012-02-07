@@ -14,6 +14,7 @@ OC_App::setActiveNavigationEntry('email_index');
 OC_Util::addStyle('email','styles');        # Angepasste Styles
 OC_Util::addScript('email', 'folders');     # Funktionen der Ordneranzeige
 
+
 #Daten laden
 $uid = OC_User::getUser();
 $query=OC_DB::prepare("SELECT * FROM *PREFIX*email_connection WHERE uid='".$uid."'");

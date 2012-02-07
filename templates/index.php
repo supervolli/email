@@ -1,3 +1,6 @@
+<?php 
+include 'ajax/mail_decode.php';
+?>
 <div id="controls">
 	<input type="button" id="email_new" value="Neue Email"></input>
 </div>

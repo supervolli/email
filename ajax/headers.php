@@ -70,11 +70,8 @@ for ( $i=$offset; $i < ( $offset + 30 ); $i++ ){
 		# Nicht gesehene Mail
 		$unseen = ( $unseen == 'U' ) ? ' header_new' : '';
 		
-		# Email Struktur
-		$structure = imap_fetchstructure($mbox, ( $anzahl - $i ) );
-		$body = $structure->type;
-#		$body = imap_fetchbody( $mbox, ( $anzahl - $i ), '1.1', 2);
-#		$body = imap_utf8( $body );
+		# Body laden
+		$body = getBody( $mbox );
 
 		# Ausgabe eines Headers
 		echo '<li class="header'.$unseen.'">';
