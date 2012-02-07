@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 email ist eine App für ownCloud. Mit dieser soll es möglich sein, Emails von einem IMAP-Konto abzuholen, zu bearbeiten und zu senden.
 
 In dieser Version möglich:
@@ -13,3 +14,16 @@ Konfiguration muss noch manuell auf dem Server erfolgen.
 Da ich kein Programmierer bin, bin ich für jede Hilfe dankbar. Also Branch erstellen!
 
 supervolli
+=======
+email ist eine App fÃ¼r ownCloud. Mit dieser soll es mÃ¶glich sein, Emails von einem IMAP-Konto abzuholen, zu bearbeiten und zu senden.
+
+In dieser Version mÃ¶glich:
+* Anzeigen der PostfÃ¤cher
+* Anzeigen der Mailheader
+
+Konfiguration muss noch manuell auf dem Server erfolgen.
+
+Da ich kein Programmierer bin, bin ich fÃ¼r jede Hilfe dankbar. Also Branch erstellen!
+
+supervolli
+>>>>>>> 15f2dfb522c6f6955bcf4bf7595e653d1443ef92
