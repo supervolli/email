@@ -60,10 +60,11 @@ table.headertable {
 	white-space: normal !important;
 	line-height: 1.2em;
 	background: #FEFEFE;
+	cursor: hand !important;
 }
 
 table.headertable tr {
-	cursor: hand;
+	display: block;
     -webkit-transition: none;	
 }
 
