@@ -6,7 +6,7 @@ OC_Util::checkLoggedIn();
 OC_Util::checkAppEnabled('email');
 
 require( 'template.php' );
-include 'ajax/mail_decode.php';
+require( 'ajax/mail_decode.php' );
 
 #Navigation anzeigen
 OC_App::setActiveNavigationEntry('email_index');
