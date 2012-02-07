@@ -69,9 +69,8 @@ for ( $i=$offset; $i < ( $offset + 30 ); $i++ ){
 		$answered = $header->Answered;
 		# Nicht gesehene Mail
 		$unseen = ( $unseen == 'U' ) ? ' header_new' : '';
-		
-		# Body laden
-		$body = getBody( $mbox , ($anzahl - $i) );
+
+		$body = getBody();
 
 		# Ausgabe eines Headers
 		echo '<li class="header'.$unseen.'">';
