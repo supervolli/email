@@ -15,7 +15,10 @@ $.ajax({
 	  cache: false,
 	  dataType: "text",
 	  success: function( folders ){
-	    $("#folders").html( folders );
+	  	  $("#folders").html( folders );
+		  $("li#folder").click(function(){
+			  	alert('test');
+			  });
 	  },
 	  error: function ( error ) {
 		alert( error )

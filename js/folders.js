@@ -16,9 +16,6 @@ function loadHeaders( folder, offset ){
 				  $("#headers").append( headers );
 			  }
 			  //onClick zuweisen
-			  $("li#folder").click(function(){
-				  	alert('test');
-				  });
 		  },
 		  error: function ( error ) {
 			  alert( error )
