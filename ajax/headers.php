@@ -36,11 +36,33 @@ for ( $i=$offset; $i < ( $offset + 30 ); $i++ ){
 	# Header einer Mail laden
 	$header = imap_headerinfo( $mbox,( $anzahl - $i ), 20, 100 );
     if ( $header ) {
-		$subject = imap_utf8( $header->subject );
+		# Fremdcode Test Codierung Herausbekommen
+        if(ereg("=?utf-8",strtolower($header->subject))){ 
+            $subject = utf8_decode(imap_utf8($header->subject)); 
+            $subject = htmlentities($subject); 
+            $from    = $header->fromaddress;     
+        } 
+        elseif(ereg("=?iso-8859-1",strtolower($header->subject))){ 
+            $subject = utf8_decode(imap_utf8($header->subject)); 
+            $subject = htmlentities($subject); 
+            $from    = $header->fromaddress; 
+        } 
+        elseif(ereg("=?us-ascii",strtolower($header->subject))){ 
+            //$subject = imap_mime_header_decode($header->subject); 
+            $subject = utf8_decode(imap_utf8($header->subject)); 
+            $subject = htmlentities($subject); 
+            //    print_r($header); 
+        } 
+        else{ 
+            $subject = $header->subject; 
+            $from    = $header->fromaddress; 
+        }    	
+    	# Ende
+ #   	$subject = imap_utf8( $header->subject );
 		# Mail von heute?
 		$datetmp = $header->udate;
 		$date = ( date("d M Y") == date("d M Y", $datetmp) ) ? date( "H:m", $datetmp ) : date( "d.m.y", $datetmp );
- 		$from = trim(imap_utf8( $header->fetchfrom ));
+ #		$from = trim(imap_utf8( $header->fetchfrom ));
 		$message_id = $header->message_id;
 		$unseen = $header->Unseen;
 		$flagged = $header->Flagged;
