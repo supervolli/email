@@ -21,6 +21,10 @@ function loadHeaders( folder, offset ){
 				  loadHeaders( folder, offset );
 				  $(this).hide("slow");
 			  });
+			  //Klick auf die Email
+			  $("li#mailheader").click(function(){
+				 alert ( $(this).find("#mailfolder").val() ); 
+			  });
 		  },
 		  error: function ( error ) {
 			  alert( error )

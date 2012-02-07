@@ -60,6 +60,7 @@ li.header {
 	border-bottom: 1px solid #F2F2F2;
 	font-size: 85%;
 	padding: 5px 3px 3px 15px;
+	cursor: pointer !important;
 }
 
 span.header_subject {

@@ -76,7 +76,9 @@ for ( $i=$offset; $i < ( $offset + 30 ); $i++ ){
 		$body = getBody( $mbox, ( $anzahl - $i ) );
 		$body = substr($body, 0, 200 );
 		# Ausgabe eines Headers
-		echo '<li class="header'.$unseen.'">';
+		echo '<li id="mailheader" class="header'.$unseen.'">';
+		echo '<input type="hidden" id="mailfolder" value="'.$folder.'">';
+		echo '<input type="hidden" id="mailnummer" value="'.( $anzahl - $i ).'">';
 		echo '<b>'.$date.'&nbsp;&nbsp;&nbsp;'.$from.'</b><br>';
 		echo '<span class="header_subject">'.$subject.'</span><br>';
 		echo '<span class="header_body">'.$body.'</span>';
