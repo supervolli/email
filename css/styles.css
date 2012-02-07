@@ -27,7 +27,7 @@
    white-space: nowrap;
    overflow: hidden;
    text-overflow: ellipsis;
-   cursor: hand;	
+   cursor: pointer;	
 }
 
 .folder_sel {
@@ -35,18 +35,20 @@
    white-space: nowrap;
    overflow: hidden;
    text-overflow: ellipsis;
-   cursor: hand;
-   background: #DDD;
-   border-bottom: 1px solid #AAA;	
+   cursor: pointer;
+   background: #E8E8E8;
+   border-top: 1px solid #CCC;	
 }
 
-.folder a {
-   height: 23px;
-   display: block;
-   margin: 0 0 0 0;
-   padding: 0 0 0 5px;
-   color: black;	
+.folder_hover {
+   padding: .5em 1.8em;
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   cursor: pointer;
+      background: #EBEBEB;
 }
+
 
 #headersdiv {
   position: absolute;

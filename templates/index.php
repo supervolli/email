@@ -26,6 +26,9 @@ $.ajax({
               //Postfach lasden
 			  loadHeaders($(this).find("input").val(), 0);
 		  });
+		  $("li#folder").hover(function(){
+			  $(this).addClass("folder_hover");
+		  });
 		  //Ersten Ordner laden
 		  $("#folder:first").addClass("folder_sel");
 		  loadHeaders($("#folder:first").find("input").val(), 0);
