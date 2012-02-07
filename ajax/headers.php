@@ -71,7 +71,7 @@ for ( $i=$offset; $i < ( $offset + 30 ); $i++ ){
 		$unseen = ( $unseen == 'U' ) ? ' header_new' : '';
 		
 		# Body laden
-		#$body = getBody( $mbox , ($anzahl - $i) );
+		$body = getBody( $mbox , ($anzahl - $i) );
 
 		# Ausgabe eines Headers
 		echo '<li class="header'.$unseen.'">';

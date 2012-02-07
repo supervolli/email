@@ -1,6 +1,7 @@
 <?php
-function getBody( $mbox ){
+function getBody( $mbox , $msgno){
 	return "geht";
 }
-echo "ttt";
+
+
 ?>
