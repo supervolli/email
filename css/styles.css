@@ -62,6 +62,10 @@ table.headertable {
 	background: #FEFEFE;
 }
 
+table.headertable tr {
+    -webkit-transition: none;	
+}
+
 td.from {
    font-weight: bold;
    overflow: hidden;
