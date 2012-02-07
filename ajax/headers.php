@@ -49,9 +49,9 @@ for ( $i=$offset; $i < ( $offset + 30 ); $i++ ){
 		$unseen = ( $unseen == 'U' ) ? ' header_new' : '';
 		# Ausgabe eines Headers
 		echo '<li class="header'.$unseen.'">';
-		echo '  '.$date.' - '.$from.'<br>';
-		echo '  '.$subject.'<br>';
-		echo '  Ein kleines bisschen vom Body...';
+		echo $date.' - '.$from.'<br>';
+		echo $subject.'<br>';
+		echo 'Ein kleines bisschen vom Body...';
 		echo '</li>';
     }
 }
