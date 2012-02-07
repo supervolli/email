@@ -44,7 +44,7 @@ foreach ($folders as $key=>$val){
   $unseen = ( $status->unseen <> '0' ) ? " (<b>".$status->unseen."</b>)" : '' ;
   # Postfacheintrag ausgeben
   echo '  <li class="folder" id="folder">';
-  echo '    <input type="hidden" name="folder" value="'.$fserverstring.$tmpfolder.'">';
+  echo '    <input type="hidden" name="folder" value="'.$serverstring.$tmpfolder.'">';
   echo '    '.$folder.$unseen;
   echo '  </li>';
 }

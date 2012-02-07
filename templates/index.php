@@ -15,10 +15,19 @@ $.ajax({
 	  cache: false,
 	  dataType: "text",
 	  success: function( folders ){
+		  // Ordner ausgeben
 	  	  $("#folders").html( folders );
+	  	  // Was passiert bei Klick auf Ordner
 		  $("li#folder").click(function(){
-			  	alert($(this).find("input").val());
-			  });
+			  // Dunkel werden lassen
+              $(this).addClass("folder_sel");
+              //Postfach lasden
+			  loadHeaders($(this).find("input").val(), 0);
+		  });
+		  //Ersten Ordner laden
+		  erster = $("#folder").find(":first");
+		  erster.addClass("folder_sel");
+		  loadHeaders(erster.find("input").val(), 0);
 	  },
 	  error: function ( error ) {
 		alert( error )

@@ -27,7 +27,17 @@
    white-space: nowrap;
    overflow: hidden;
    text-overflow: ellipsis;
-   cursor: default;	
+   cursor: hand;	
+}
+
+.folder_sel {
+   padding: .5em 1.8em;
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   cursor: hand;
+   background: #DDD;
+   border-bottom: 1px solid #AAA;	
 }
 
 .folder a {
