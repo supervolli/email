@@ -34,6 +34,8 @@
    background: #E8E8E8;
    border-top: 1px solid #CCC;	
    border-bottom: 1px solid #FEFEFE;
+   font-weight: bold;
+   font-size: 90%;
 }
 
 .folder_hover {
@@ -62,7 +64,11 @@ li.header {
 
 span.header_subject {
     white-space: nowrap;
-    color: #222;	
+    color: #444;	
+}
+
+span.header_body {
+	
 }
 
 li.header_new {
