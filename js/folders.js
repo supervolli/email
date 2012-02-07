@@ -17,10 +17,9 @@ function loadHeaders( folder, offset ){
 			  }
 			  //Klick auf "Weitere Mails laden"
 			  $("li#mehrmails").click(function(){
-				  alert("mehrladen")
-				/*  offset = offset + 30;
+				  offset = offset + 30;
 				  loadHeaders( folder, offset );
-				  $(this).hide("slow");*/
+				  $(this).hide("slow");
 			  });
 		  },
 		  error: function ( error ) {
