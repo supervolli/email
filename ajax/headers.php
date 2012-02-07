@@ -74,7 +74,7 @@ for ( $i=$offset; $i < ( $offset + 30 ); $i++ ){
 		# Ausgabe eines Headers
 		echo '<li class="header'.$unseen.'">';
 		echo '<b>'.$date.'&nbsp;&nbsp;&nbsp;'.$from.'</b><br>';
-		echo '<span class="header_subject>"'.$subject.'</span><br>';
+		echo '<span class="header_subject">'.$subject.'</span><br>';
 		echo '<span class="header_body">'.$body.'</span>';
 		echo '</li>';
     }
