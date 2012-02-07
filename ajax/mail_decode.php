@@ -24,7 +24,7 @@ function getBody( $mbox, $msgno ){
 		}	
 	} else {       # Multipart
 		$body = imap_fetchbody( $mbox, $msgno, 1, 2 );
-		$body = $subtype;
+		$body = $type.' '.$subtype;
 	}
 	
 	return $body;
