@@ -24,7 +24,7 @@ function getBody( $mbox, $msgno ){
 		}	
 	} else {       # Multipart
 		
-		$body = 'multipart, '.$type.', '.$subtype;
+		$body = 'multipart'.$struct->description;
 	}
 	
 	return $body;
