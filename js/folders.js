@@ -17,7 +17,7 @@ function loadHeaders( folder, offset ){
 			  }
 			  //Klick auf "Weitere Mails laden"
 			  $("#mehrmails").click(function(){
-				  alert("mehrladen");
+				  alert("mehrladen")
 				/*  offset = offset + 30;
 				  loadHeaders( folder, offset );
 				  $(this).hide("slow");*/
