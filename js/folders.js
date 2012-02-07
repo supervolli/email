@@ -21,3 +21,8 @@ function loadHeaders( folder, offset ){
 		  } 
 		});
 }
+
+$("#folder").click(function(){
+	$folder = $(this input).value;
+	alert($folder);
+})

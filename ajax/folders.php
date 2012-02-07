@@ -29,7 +29,7 @@ if ( $mbox ){
   sort( $folders );
 }
 
-echo '<li class="folder_head">Postf&auml;cher --- reload</li>';
+echo '  <li class="folder_head">Postf&auml;cher --- reload</li>';
 
 # Postfaecher einzelnd ausgeben
 foreach ($folders as $key=>$val){
@@ -43,7 +43,10 @@ foreach ($folders as $key=>$val){
   $status = imap_status($mbox, $val->name, SA_ALL);
   $unseen = ( $status->unseen <> '0' ) ? " (<b>".$status->unseen."</b>)" : '' ;
   # Postfacheintrag ausgeben
-  echo '  <li class="folder"><a href="#" onclick="loadHeaders(\''.$serverstring.$tmpfolder.'\', 0 )">'.$folder.$unseen.'</a></li>';
+  echo '  <li class="folder" id="folder">';
+  echo '    <input type="hidden" name="folder" value="'.$fserverstring.$tmpfolder.'">';
+  echo '    '.$folder.$unseen;
+  echo '  </li>';
 }
 
 ($mbox) ? imap_close( $mbox ) : '';
