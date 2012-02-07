@@ -19,6 +19,7 @@ function getBody( $mbox, $msgno ){
 				$body = quoted_printable_decode($body);
 			    break;
 		}
+		$body = $subtype.$body;
 	} else {       # Multipart
 		
 		$body = 'multipart';
