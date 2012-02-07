@@ -10,20 +10,23 @@ function loadHeaders( folder, offset ){
 		  url: "ajax/headers.php?folder=" + folder + '&offset=' + offset,
 		  cache: false,
 		  success: function( headers ){
+			  //Neues Postfach oder Zusätzliche Mails?
 			  if (offset == 0 ) {
 				  $("#headers").html( headers );
 			  } else {
 				  $("#headers").append( headers );
 			  }
+			  
 			  //Klick auf "Weitere Mails laden"
 			  $("li#mehrmails").click(function(){
 				  offset = offset + 30;
 				  loadHeaders( folder, offset );
 				  $(this).hide("slow");
 			  });
+			  
 			  //Klick auf die Email
 			  $("li#mailheader").click(function(){
-				 alert ( $(this).find("#mailfolder").val() ); 
+				 $("#maildiv").html = $(this).find("#mailfolder").val() ; 
 			  });
 		  },
 		  error: function ( error ) {

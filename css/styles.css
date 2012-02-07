@@ -89,3 +89,11 @@ li.mehrmails {
 	border-bottom: 1px solid #F2F2F2;
 	font-size: 85%;	
 }
+
+#maildiv {
+    position: absolute;
+    top: 6.4em;
+    left: 64.5em;
+    background: #EEEEFF;
+    overflow: auto;	
+}

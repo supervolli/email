@@ -46,3 +46,6 @@ $.ajax({
 	<ul id="headers">&nbsp;
 	</ul>
 </div>
+<div id="maildiv">
+
+</div>
