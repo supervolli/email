@@ -60,6 +60,11 @@ li.header {
 	padding: 5px 3px 3px 15px;
 }
 
+span.header_subject {
+    white-space: nowrap;
+    color: #222;	
+}
+
 li.header_new {
     background: #F0F0F0;	
 }
