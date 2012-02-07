@@ -1,7 +1,11 @@
 <div id="controls">
 	<input type="button" id="email_new" value="Neue Email"></input>
 </div>
-<div id="folders">folders</div>
+<div id="folderdiv">
+  <ul id="folders">
+    <li class="folder_head">Postf&auml;cher --- reload</li>
+  </ul>
+</div>
 
 <script type="text/javascript">
 <!--
@@ -21,7 +25,6 @@ $.ajax({
 </script>
 
 <div id="headersdiv">
-	<ul id="headers">
-	  <li class="folder_head">Postf&auml;cher --- reload</li>
+	<ul id="headers">&nbsp;
 	</ul>
 </div>

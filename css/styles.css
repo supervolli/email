@@ -1,4 +1,4 @@
-#folders {
+#folderdiv {
  	position: fixed;
  	overflow: auto;
  	top: 6.4em;
@@ -9,13 +9,6 @@
  	list-style: none;
 }
 
-#folders li {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  cursor: default;	
-}
-
 .folder_head {
   	cursor: default;
     background: #FDFDFD;
@@ -23,10 +16,18 @@
     padding: .7em .8em !important;
     color: #BBB;
     font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: default;
 }
 
 .folder {
-   padding: .5em 1.8em;	
+   padding: .5em 1.8em;
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   cursor: default;	
 }
 
 .folder a {
