@@ -15,7 +15,11 @@ function loadHeaders( folder, offset ){
 			  } else {
 				  $("#headers").append( headers );
 			  }
-			  //onClick zuweisen
+			  //Klick auf "Weitere Mails laden"
+			  $("#mehrmails").click(function(){
+				  loadHeaders( folder, offset + 30 );
+				  $(this).hide("slow");
+			  });
 		  },
 		  error: function ( error ) {
 			  alert( error )
