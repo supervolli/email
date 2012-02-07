@@ -71,15 +71,8 @@ for ( $i=$offset; $i < ( $offset + 30 ); $i++ ){
 		$unseen = ( $unseen == 'U' ) ? ' header_new' : '';
 		
 		# Body Auszug laden
- 		function ReplaceImap($txt) {
-			$carimap = array("=C3=A9", "=C3=A8", "=C3=AA", "=C3=AB", "=C3=A7", "=C3=A0", "=20", "=C3=80", "=C3=89");
-			$carhtml = array("é", "è", "ê", "ë", "ç", "à", "&nbsp;", "À", "É");
-			$txt = str_replace($carimap, $carhtml, $txt);
- 			return $txt;
-		}		
 		$body = imap_body($mbox, ( $anzahl - $i ), 1, 2);
 		$body = imap_utf8($body);
-		$body = ReplaceImap($body);
 		$body = nl2br($body);
 		# Ausgabe eines Headers
 		echo '<li class="header'.$unseen.'">';
