@@ -55,7 +55,7 @@ ul#headers li {
 	font-size: 85%;	
 }
 
-li.header table {
+table.headertable {
 	width:100%;
 	white-space: normal !important;
 	line-height: 1.2em;

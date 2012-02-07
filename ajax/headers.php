@@ -47,7 +47,7 @@ for ( $i=$offset; $i < ( $offset + 30 ); $i++ ){
 		$answered = $header->Answered;
 	#	# Ausgabe eines Headers
 		echo '<li class="header">';
-		echo '<table>';
+		echo '<table class="headertable">';
 		echo '  <tr><td class="from">'.$from.'</td><td class="date">'.$date.'</td></tr>';
 		echo '  <tr><td class="subject'.$unseen.'" colspan="2">'.$subject.'</td></tr>';
 		echo '  <tr><td class="mailbody" colspan="2">Ein kleines bisschen vom Body...</td></tr>';
