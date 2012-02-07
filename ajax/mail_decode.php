@@ -1,7 +1,7 @@
 <?php
 
-function getBody( ){
-	echo 'the body';
+function get_body( ){
+	return 'the body';
 }
 
 
