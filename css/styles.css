@@ -58,8 +58,19 @@ li.header {
 	font-size: 85%;	
 }
 
+li.header_new {
+    background: #FBFBFB;	
+}
 
 li.mehrmails {
 	text-align: center;
-	vertical-align: middle;	
+	vertical-align: middle;
+	display: block;
+	overflow: hidden;
+	height: 6em;
+	color: #008;
+	border-left: 1px solid #DDD;
+	border-right: 1px solid #F2F2F2;
+	border-bottom: 1px solid #F2F2F2;
+	font-size: 85%;	
 }

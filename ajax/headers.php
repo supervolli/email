@@ -45,8 +45,10 @@ for ( $i=$offset; $i < ( $offset + 30 ); $i++ ){
 		$unseen = $header->Unseen;
 		$flagged = $header->Flagged;
 		$answered = $header->Answered;
-	#	# Ausgabe eines Headers
-		echo '<li class="header">';
+		# Nicht gesehene Mail
+		$unseen = ( $unseen == 'U' ) ? ' header_new' : '';
+		# Ausgabe eines Headers
+		echo '<li class="header'.$unseen.'">';
 		echo '  '.$from.' '.$date;
 		echo '  '.$subject;
 		echo '  Ein kleines bisschen vom Body...';
