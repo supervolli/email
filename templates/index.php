@@ -28,6 +28,8 @@ $.ajax({
 		  });
 		  $("li#folder").hover(function(){
 			  $(this).addClass("folder_hover");
+		  }, function (){
+			  $(this).removeClass("folder_hover");
 		  });
 		  //Ersten Ordner laden
 		  $("#folder:first").addClass("folder_sel");
