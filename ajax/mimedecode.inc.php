@@ -753,11 +753,13 @@
 			$msg.="<b>Date : </b>".$object->headers[date]."<br><br>";*/
 			$main_content_type=trim($object->ctype_primary)."/".trim($object->ctype_secondary);
 			//trim(strtok($object->headers['content-type'],";"));
-			$msg.=$this->walk(&$object,"",$main_content_type, $uid);
+			#$msg.=$this->walk(&$object,"",$main_content_type, $uid);
+			$msg.=$this->walk(&$object,"",$main_content_type);
 			return $msg;
 		}
 
-		function walk($object,$msg="",$main_content_type="", $uid)
+		#function walk($object,$msg="",$main_content_type="", $uid)
+		function walk($object,$msg="",$main_content_type="")
 		{
 			if(!isset($object->parts))
 			{
@@ -782,7 +784,8 @@
 						if(empty($name))
 							 trim(strtok($object->headers['content-type'],"="));
 						$name=trim(strtok("=\""));
-						$temp="../../data/".$uid."/email_attachments/";
+						#$temp="../../data/".$uid."/email_attachments/";
+						$temp="./temp/";
 						@mkdir($temp,777);
 						$tmpfile=$temp.$name;
 						//$tmpfile=realpath($tmpfile);
@@ -804,7 +807,8 @@
 						if(empty($name))
 							 trim(strtok($object->headers['content-type'],"="));
 						$name=trim(strtok("=\""));
-						$temp="../../data/".$uid."/email_attachments/";
+						#$temp="../../data/".$uid."/email_attachments/";
+						$temp="./temp/";
 						@mkdir($temp,777);
 						$tmpfile=$temp.$name;
 						//$tmpfile=realpath($tmpfile);
@@ -818,7 +822,8 @@
 			}
 			else
 				foreach($object->parts as $obj)
-					$this->walk($obj,&$msg,$main_content_type,$uid);
+					#$this->walk($obj,&$msg,$main_content_type,$uid);
+					$this->walk($obj,&$msg,$main_content_type);
 			return $msg;
 		}
 	
