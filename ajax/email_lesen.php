@@ -2,6 +2,8 @@
 require_once('../../../lib/base.php');
 #include 'html2text.php';
 #include 'mail_decode.php';
+include_once 'mail_decode.inc.php';
+include_once 'imap.inc.php';
 
 OC_Util::checkLoggedIn();
 OC_Util::checkAppEnabled('email');
@@ -19,11 +21,6 @@ $mailhost = $data[0]['mailhost'];
 $mailpwd  = $data[0]['mailpwd'];
 $mailport = $data[0]['mailport'];
 $mailssl  = $data[0]['mailssl'];
-
-# Imap-Funktionen
-$attachment_temp = '../../data/'.$uid.'/email_attachments'; # Email Anlagen -> Auswählbar machen unter "files"
-include_once 'mail_decode.inc.php';
-include_once 'imap.inc.php';
 
 # Wird SSL benutzt?
 #$mailssl = ( $mailssl ) ? '/ssl' : '';
@@ -57,7 +54,7 @@ include_once 'imap.inc.php';
 	///Decoding the mail	
 
 	$mimedecoder=new MIMEDECODE($response,"\r\n");
-	$msg=$mimedecoder->get_parsed_message();
+	$msg=$mimedecoder->get_parsed_message($uid);
 	print_r($msg);
 	//echo nl2br($response);
 	echo $imap->get_error();

@@ -744,7 +744,7 @@
 		/////arguments [in]$object = object returned by get_message function defined above
 		/////arguments [in]$msg = a pointer to messgae
 		///// this function returns message string
-		function get_parsed_message()
+		function get_parsed_message( $uid )
 		{
 			$object=$this->decode();
 			/*$msg.="<b>To : </b>".$object->headers[to]."<br>";
@@ -753,11 +753,11 @@
 			$msg.="<b>Date : </b>".$object->headers[date]."<br><br>";*/
 			$main_content_type=trim($object->ctype_primary)."/".trim($object->ctype_secondary);
 			//trim(strtok($object->headers['content-type'],";"));
-			$msg.=$this->walk(&$object,"",$main_content_type);
+			$msg.=$this->walk(&$object,"",$main_content_type, $uid);
 			return $msg;
 		}
 
-		function walk($object,$msg="",$main_content_type="")
+		function walk($object,$msg="",$main_content_type="", $uid)
 		{
 			if(!isset($object->parts))
 			{
@@ -782,7 +782,7 @@
 						if(empty($name))
 							 trim(strtok($object->headers['content-type'],"="));
 						$name=trim(strtok("=\""));
-						$temp=$attachments_temp."/";
+						$temp="../../data/".$uid."/email_attachments/";
 						@mkdir($temp,777);
 						$tmpfile=$temp.$name;
 						//$tmpfile=realpath($tmpfile);
@@ -804,7 +804,7 @@
 						if(empty($name))
 							 trim(strtok($object->headers['content-type'],"="));
 						$name=trim(strtok("=\""));
-						$temp=$attachments_temp."/";
+						$temp="../../data/".$uid."/email_attachments/";
 						@mkdir($temp,777);
 						$tmpfile=$temp.$name;
 						//$tmpfile=realpath($tmpfile);
@@ -818,7 +818,7 @@
 			}
 			else
 				foreach($object->parts as $obj)
-					$this->walk($obj,&$msg,$main_content_type);
+					$this->walk($obj,&$msg,$main_content_type,$uid);
 			return $msg;
 		}
 	
