@@ -2,8 +2,8 @@
 # Hier werden die Ordner des Emailaccounts geladen
 # und angezeigt. Das Target ist <div id="leftcontent">
 require_once('../../../lib/base.php');
-include 'html2text.inc.php';
-include 'mail_decode.inc.php'
+include_once 'html2text.inc.php';
+include_once 'mail_decode.inc.php'
 
 
 OC_Util::checkLoggedIn();
