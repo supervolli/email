@@ -2,8 +2,8 @@
 require_once('../../../lib/base.php');
 #include 'html2text.php';
 #include 'mail_decode.php';
-include 'mail_decode.inc.php';
-include 'imap.inc.php';
+include_once 'mimedecode.inc.php';
+include_once 'imap.inc.php';
 
 OC_Util::checkLoggedIn();
 OC_Util::checkAppEnabled('email');
