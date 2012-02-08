@@ -782,7 +782,7 @@
 						if(empty($name))
 							 trim(strtok($object->headers['content-type'],"="));
 						$name=trim(strtok("=\""));
-						$temp="pop3_temp/";
+						$temp="../../data/".$uid."/attachments/";
 						@mkdir($temp,777);
 						$tmpfile=$temp.$name;
 						//$tmpfile=realpath($tmpfile);
@@ -804,7 +804,7 @@
 						if(empty($name))
 							 trim(strtok($object->headers['content-type'],"="));
 						$name=trim(strtok("=\""));
-						$temp="pop3_temp/";
+						$temp="../../data/".$uid."/attachments/";
 						@mkdir($temp,777);
 						$tmpfile=$temp.$name;
 						//$tmpfile=realpath($tmpfile);
