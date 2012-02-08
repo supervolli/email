@@ -30,8 +30,6 @@ $mailssl  = $data[0]['mailssl'];
 #$mbox = imap_open( $folder, $mailuser, $mailpwd );
 
 #echo getBody( $mbox, $msgno );
-    $mbox = imap_open( $folder, $mailuser, $mailpwd );
-    $response2 = imap_body($mbox,$folder,2);
 
 	$tmp = explode( '}',  $folder );
 	$folder = $tmp[1];
@@ -51,10 +49,9 @@ $mailssl  = $data[0]['mailssl'];
 	//echo $response=$imap->rollback_delete(9);
 	$response=$imap->get_message($msgno);
 
-
 	///Decoding the mail	
 
-	$mimedecoder=new MIMEDECODE($response2,"\r\n");
+	$mimedecoder=new MIMEDECODE($response,"\r\n");
 	$msg=$mimedecoder->get_parsed_message($uid);
 	print_r($msg);
 	//echo nl2br($response);
