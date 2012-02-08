@@ -53,8 +53,8 @@ $mailssl  = $data[0]['mailssl'];
 	///Decoding the mail	
 
 	$mimedecoder=new MIMEDECODE($response,"\r\n");
-	#$msg=$mimedecoder->get_parsed_message($uid);
-	$msg=$mimedecoder->get_parsed_message();
+	$msg=$mimedecoder->get_parsed_message($uid);
+	#$msg=$mimedecoder->get_parsed_message();
 	print_r($msg);
 	//echo nl2br($response);
 	echo $imap->get_error();

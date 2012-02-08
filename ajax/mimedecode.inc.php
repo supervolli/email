@@ -744,7 +744,7 @@
 		/////arguments [in]$object = object returned by get_message function defined above
 		/////arguments [in]$msg = a pointer to messgae
 		///// this function returns message string
-		function get_parsed_message()
+		function get_parsed_message($uid)
 		{
 			$object=$this->decode();
 			/*$msg.="<b>To : </b>".$object->headers[to]."<br>";
