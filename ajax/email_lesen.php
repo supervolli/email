@@ -54,7 +54,9 @@ $mailssl  = $data[0]['mailssl'];
 
 	$mimedecoder=new MIMEDECODE($response,"\r\n");
 	$msg=$mimedecoder->get_parsed_message($uid);
-	#$msg=$mimedecoder->get_parsed_message();
+	if ( $msg == '' ) {
+		echo nl2br($response);
+	}
 	print_r($msg);
 	//echo nl2br($response);
 	echo $imap->get_error();
