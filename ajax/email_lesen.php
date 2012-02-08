@@ -63,6 +63,5 @@ $mailssl  = $data[0]['mailssl'];
 	//print_r($response);
 	//echo nl2br($response);
 	//echo $imap->error;
-	echo "<br>";
 
 ?>

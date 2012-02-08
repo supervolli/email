@@ -7,7 +7,8 @@ function getBody( $mbox, $msgno ){
 	if ( $body == '' ) {
 		$body = get_part($mbox, $msgno, "TEXT/HTML");
 	}
-#$body = convert_html_to_text($body);
+    
+	$body = convert_html_to_text($body);
 	
 	return $body;
 }
