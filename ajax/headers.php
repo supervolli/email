@@ -2,8 +2,8 @@
 # Hier werden die Ordner des Emailaccounts geladen
 # und angezeigt. Das Target ist <div id="leftcontent">
 require_once('../../../lib/base.php');
-include 'html2text.php';
-include 'mail_decode.php';
+include_once 'html2text.inc.php';
+include_once 'mail_decode.inc.php';
 
 
 OC_Util::checkLoggedIn();
@@ -33,8 +33,6 @@ $mbox = imap_open( $folder, $mailuser, $mailpwd );
 # Anzahl der Emails
 $anzahl = imap_num_msg( $mbox );
 
-echo '<ul>';
-
 for ( $i=$offset; $i < ( $offset + 30 ); $i++ ){
 	# Header einer Mail laden
 	$header = imap_headerinfo( $mbox,( $anzahl - $i ), 20, 100 );
@@ -61,8 +59,8 @@ for ( $i=$offset; $i < ( $offset + 30 ); $i++ ){
             $from    = $header->fromaddress; 
         }    	
     	# Ende
- #   	$subject = imap_utf8( $header->subject );
-		# Mail von heute?
+
+        # Mail von heute?
 		$datetmp = $header->udate;
 		$date = ( date("d M Y") == date("d M Y", $datetmp) ) ? date( "H:m", $datetmp ) : date( "d.m.y", $datetmp );
  #		$from = trim(imap_utf8( $header->fetchfrom ));

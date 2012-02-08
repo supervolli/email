@@ -3,7 +3,7 @@
 </div>
 <div id="folderdiv">
   <ul id="folders">
-    <li class="folder_head">Postf&auml;cher --- reload</li>
+    <li class="folder_head">Postf&auml;cher <img src="" alt="laden..."></li>
   </ul>
 </div>
 
@@ -23,7 +23,7 @@ $.ajax({
 			  $(".folder_sel").removeClass("folder_sel");
 			  // Den einen dunkel werden lassen
               $(this).addClass("folder_sel");
-              //Postfach lasden
+              //Postfach laden
 			  loadHeaders($(this).find("input").val(), 0);
 		  });
 		  $("li#folder").hover(function(){
