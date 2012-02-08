@@ -1,5 +1,4 @@
 <?php
-echo 1;
 require_once('../../../lib/base.php');
 #include 'html2text.php';
 #include 'mail_decode.php';
@@ -12,8 +11,6 @@ OC_Util::checkAppEnabled('email');
 # Email Konfigurtion laden
 $folder = $_GET['folder']; # zu oeffnendes Postfach
 $msgno = $_GET['msgno'];   #  welche Mail soll geladen werden
-
-echo $folder.$msgno;
 
 $uid = OC_User::getUser();
 $query = OC_DB::prepare("SELECT * FROM *PREFIX*email_connection WHERE uid='".$uid."'");
@@ -35,7 +32,7 @@ $mailssl  = $data[0]['mailssl'];
 #echo getBody( $mbox, $msgno );
 
 	$tmp = explode( '}',  $folder );
-	$folder = $tmp[1];
+
 	$imap=new IMAPMAIL;
 	if(!$imap->open($mailhost,$port))
 	{
