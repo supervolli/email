@@ -782,8 +782,8 @@
 						if(empty($name))
 							 trim(strtok($object->headers['content-type'],"="));
 						$name=trim(strtok("=\""));
-						$temp="../../data/".$uid."/attachments/";
-						@mkdir($temp,777);
+						$temp="attachments/".$uid."/";
+						@mkdir($temp,777,true);
 						$tmpfile=$temp.$name;
 						//$tmpfile=realpath($tmpfile);
 						$fp=fopen($tmpfile,"w");
@@ -804,8 +804,8 @@
 						if(empty($name))
 							 trim(strtok($object->headers['content-type'],"="));
 						$name=trim(strtok("=\""));
-						$temp="../../data/".$uid."/attachments/";
-						@mkdir($temp,777);
+						$temp="attachments/".$uid."/";
+						@mkdir($temp,777,true);
 						$tmpfile=$temp.$name;
 						//$tmpfile=realpath($tmpfile);
 						$fp=fopen($tmpfile,"w");
