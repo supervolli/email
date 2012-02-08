@@ -753,11 +753,11 @@
 			$msg.="<b>Date : </b>".$object->headers[date]."<br><br>";*/
 			$main_content_type=trim($object->ctype_primary)."/".trim($object->ctype_secondary);
 			//trim(strtok($object->headers['content-type'],";"));
-			$msg.=$this->walk(&$object,"",$main_content_type);
+			$msg.=$this->walk(&$object,"",$main_content_type, $uid);
 			return $msg;
 		}
 
-		function walk($object,$msg="",$main_content_type="")
+		function walk($object,$msg="",$main_content_type="",$uid)
 		{
 			if(!isset($object->parts))
 			{
@@ -818,7 +818,7 @@
 			}
 			else
 				foreach($object->parts as $obj)
-					$this->walk($obj,&$msg,$main_content_type);
+					$this->walk($obj,&$msg,$main_content_type, $uid);
 			return $msg;
 		}
 	
