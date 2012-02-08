@@ -43,6 +43,8 @@ function loadEmail( folder, msgno ){
 		  cache: false,
 		  success: function( email ){
 			  $("#maildiv").html( email );
+		  }, error: function (error ) {
+			  alert( error )
 		  }
 	});
 }
