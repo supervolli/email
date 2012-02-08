@@ -32,7 +32,7 @@ $mailssl  = $data[0]['mailssl'];
 #echo getBody( $mbox, $msgno );
 
 	$tmp = explode( '}',  $folder );
-
+	$folder = $tmp[1];
 	$imap=new IMAPMAIL;
 	if(!$imap->open($mailhost,$port))
 	{
