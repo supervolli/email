@@ -33,7 +33,7 @@ $mailssl  = $data[0]['mailssl'];
 
 	$tmp = explode( '}',  $folder );
 	$folder = $tmp[1];
-
+	echo $folder.$msgno;
 	$imap=new IMAPMAIL;
 	if(!$imap->open($mailhost,$port))
 	{
