@@ -61,8 +61,8 @@ for ( $i=$offset; $i < ( $offset + 30 ); $i++ ){
             $from    = $header->fromaddress; 
         }    	
     	# Ende
- #   	$subject = imap_utf8( $header->subject );
-		# Mail von heute?
+
+        # Mail von heute?
 		$datetmp = $header->udate;
 		$date = ( date("d M Y") == date("d M Y", $datetmp) ) ? date( "H:m", $datetmp ) : date( "d.m.y", $datetmp );
  #		$from = trim(imap_utf8( $header->fetchfrom ));
