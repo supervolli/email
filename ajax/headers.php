@@ -32,8 +32,6 @@ $mbox = imap_open( $folder, $mailuser, $mailpwd );
 # Anzahl der Emails
 $anzahl = imap_num_msg( $mbox );
 
-echo '<ul>';
-
 for ( $i=$offset; $i < ( $offset + 30 ); $i++ ){
 	# Header einer Mail laden
 	$header = imap_headerinfo( $mbox,( $anzahl - $i ), 20, 100 );
