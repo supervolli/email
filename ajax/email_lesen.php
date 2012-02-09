@@ -4,7 +4,7 @@ require_once('../../../lib/base.php');
 #include 'mail_decode.php';
 include_once 'mimedecode.inc.php';
 include_once 'imap.inc.php';
-include_once '../js/ckeditor/ckeditor_php5.php';
+include '../js/ckeditor/ckeditor_php5.php';
 
 OC_Util::checkLoggedIn();
 OC_Util::checkAppEnabled('email');
