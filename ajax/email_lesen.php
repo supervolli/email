@@ -51,7 +51,7 @@ $mailssl  = $data[0]['mailssl'];
 	$mimedecoder=new MIMEDECODE($response,"\r\n");
 	$msg=$mimedecoder->get_parsed_message($uid);
 		# CKEDITOR
-		echo '<textarea name="field1"></textarea>'
+		echo '<textarea name="field1"></textarea>';
 		#print_r($msg);
 		$CKEditor = new CKEditor();
 	    $config = array();
