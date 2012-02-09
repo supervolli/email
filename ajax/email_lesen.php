@@ -61,7 +61,8 @@ $mailssl  = $data[0]['mailssl'];
 	    $events['instanceReady'] = 'function (ev) {
 	       alert("Loaded: " + ev.editor.name);
 	    }';
-	    $CKEditor->editor("field1", $msg, $config, $events);
+	    #$CKEditor->editor("field1", $msg, $config, $events);
+	    $CKEditor->editor("field1", $msg);
 		# END_CKEDITOR
 	//echo nl2br($response);
 	echo $imap->get_error();
