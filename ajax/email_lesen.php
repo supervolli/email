@@ -4,6 +4,7 @@ require_once('../../../lib/base.php');
 #include 'mail_decode.php';
 include_once 'mimedecode.inc.php';
 include_once 'imap.inc.php';
+include_once '../js/ckeditor/ckeditor_php5.php';
 
 OC_Util::checkLoggedIn();
 OC_Util::checkAppEnabled('email');
@@ -22,14 +23,10 @@ $mailpwd  = $data[0]['mailpwd'];
 $mailport = $data[0]['mailport'];
 $mailssl  = $data[0]['mailssl'];
 
-# Wird SSL benutzt?
-#$mailssl = ( $mailssl ) ? '/ssl' : '';
-#$mailssl = $mailssl.'/novalidate-cert';
 
 # Ausgewaehltes Postfach öffnen und Header laden
-#$mbox = imap_open( $folder, $mailuser, $mailpwd );
-
-#echo getBody( $mbox, $msgno );
+#
+# Hier vor: Ist es eine text/plain Mail? Dann extra behandeln (body)
 
 	$tmp = explode( '}',  $folder );
 	$folder = $tmp[1];
@@ -53,7 +50,20 @@ $mailssl  = $data[0]['mailssl'];
 
 	$mimedecoder=new MIMEDECODE($response,"\r\n");
 	$msg=$mimedecoder->get_parsed_message($uid);
-	print_r($msg);
+		# CKEDITOR
+		echo '<textarea name="field1"></textarea>'
+		#print_r($msg);
+		$CKEditor = new CKEditor();
+	    $config = array();
+	    $config['toolbar'] = array(
+	        array( 'Source', '-', 'Bold', 'Italic', 'Underline', 'Strike' ),
+	       array( 'Image', 'Link', 'Unlink', 'Anchor' )
+	    );
+	    $events['instanceReady'] = 'function (ev) {
+	       alert("Loaded: " + ev.editor.name);
+	    }';
+	    $CKEditor->editor("field1", $msg, $config, $events);
+		# END_CKEDITOR
 	//echo nl2br($response);
 	echo $imap->get_error();
 	$imap->close();
@@ -62,4 +72,7 @@ $mailssl  = $data[0]['mailssl'];
 	//echo nl2br($response);
 	//echo $imap->error;
 
+	if ($mbox){
+		imap_close($mbox);
+	}
 ?>
