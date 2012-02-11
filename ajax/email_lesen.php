@@ -53,7 +53,7 @@ $mailssl  = $data[0]['mailssl'];
 		# CKEDITOR
 		#print_r($msg);
 		$CKEditor = new CKEditor();
-	    $config = array();
+	    $config = array('fullPage' => true, 'readOnly' => true);
 	    $config['toolbar'] = array(
 	        array( 'Source', '-', 'Bold', 'Italic', 'Underline', 'Strike' ),
 	       array( 'Image', 'Link', 'Unlink', 'Anchor' )
