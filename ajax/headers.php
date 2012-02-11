@@ -72,7 +72,7 @@ for ( $i=$offset; $i < ( $offset + 30 ); $i++ ){
 		$unseen = ( $unseen == 'U' ) ? ' header_new' : '';
 
 		$body = getBody( $mbox, ( $anzahl - $i ) );
-		$body = substr($body, 0, 200 );
+		$body = substr($body, 0, 500 );
 		# Ausgabe eines Headers
 		echo '<li id="mailheader" class="header'.$unseen.'">';
 		echo '<input id="mailfolder" type="hidden" value="'.$folder.'">';
