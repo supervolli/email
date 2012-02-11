@@ -38,7 +38,9 @@ function loadHeaders( folder, offset ){
 }
 
 function loadEmail( folder, msgno ){
-	$.ajax({
+	url="ajax/email_lesen.php?folder=" + folder + "&msgno=" + msgno;
+	fenster = window.open(url, "email_lesen", "width=800,height=600,status=yes,scrollbars=yes,resizable=yes");
+	/*$.ajax({
 		  url: "ajax/email_lesen.php?folder=" + folder + "&msgno=" + msgno,
 		  cache: false,
 		  success: function( email ){
@@ -46,5 +48,5 @@ function loadEmail( folder, msgno ){
 		  }, error: function (error ) {
 			  alert( error )
 		  }
-	});
+	});*/
 }
