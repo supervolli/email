@@ -76,3 +76,13 @@ $mailssl  = $data[0]['mailssl'];
 		imap_close($mbox);
 	}
 ?>
+<script>
+CKEDITOR.replace( 'textarea_id',
+		{
+			extraPlugins : 'autogrow',
+			extraPlugins : 'docprops',
+			autoGrow_maxHeight : 800,
+			removePlugins : 'resize',
+			fullPage : true,
+		});
+</script>
